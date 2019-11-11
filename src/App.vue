@@ -1,18 +1,23 @@
 <template>
-  <div id="app">
+  <div class="app">
+  <router-view></router-view>
   
   </div>
+ 
 </template>
 
 <script>
 
-
 export default {
-  name: 'app',
+  name: 'App',
+created(){
+  console.log(this,this.$route);
+},
+
 
 }
 </script>
 
-<style lang="scss">
+<style >
 
 </style>

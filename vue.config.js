@@ -9,7 +9,7 @@ module.exports={
         }
     },
     //别名配置
-    configureWebpack:{
+     configureWebpack:{
         resolve:{
             alias:{
                 "@":path.join(__dirname,"./src"),

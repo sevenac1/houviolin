@@ -20,3 +20,4 @@ server.interceptors.response.use((res)=>{
 },(err)=>{
     Promise.reject(err);
 })
+export default server;
