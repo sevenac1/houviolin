@@ -5,13 +5,13 @@ import books from "./books"
 import auction from "./auction"
 import cart from "./cart"
 import mine from "./mine"
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 const router=new VueRouter({
     mode:"hash",
     routes:[
         {
             path:"/",
-            redirect:"/home"
+            redirect:"/auction"
         },
         home,
         books,
@@ -25,7 +25,14 @@ const router=new VueRouter({
             meta:{
                 title:123
             }
-        }
-    ]
+        },
+    
+   
+    {
+        path:"/xianzhuang",
+        component:_=>import("@page/xian"),
+        name:"xian"
+    },]
+    
 })
 export default router;
