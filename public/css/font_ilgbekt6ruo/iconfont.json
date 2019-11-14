@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3484344",
+      "name": "下 拉",
+      "font_class": "xiala",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    }
+  ]
+}

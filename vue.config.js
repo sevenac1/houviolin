@@ -2,10 +2,16 @@ const path=require("path");
 module.exports={
     devServer:{
         proxy:{
-            "/":{
-                target:"https://m.kongfz.com",
+            "/home":{
+                target:"http://m.kongfz.cn/mobile",
+                changeOrigin:true
+            },
+            "/list":{
+                target:"http://m.kongfz.cn/mobile",
                 changeOrigin:true
             }
+          
+        
         }
     },
     //别名配置

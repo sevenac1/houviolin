@@ -10,9 +10,7 @@
 
 export default {
   name: 'App',
-created(){
-  console.log(this,this.$route);
-},
+
 
 
 }
