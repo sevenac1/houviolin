@@ -1,6 +1,7 @@
 <template>
 <Better ref="scroll" class="in">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div class="min">   
     <div class="booklist"    v-for="(item,index) in totalList" :key="Number(item.id)">
         <div id="title-two">
@@ -10,18 +11,24 @@
             </div>
      
 =======
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
     <div class="min">
          <div id="title-two">
             <div>
                     <span class="bond">线装古旧书</span>
                     <span class="num">837</span>
             </div>
+<<<<<<< HEAD
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
+=======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
             <a href="" class="too-title">
                 <span>全部</span>
                 <img class="title-two-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAARtJREFUWAnt1j0OgjAUB3BrPICXoJObmxuJN3BxdIHNyXM4uQGJq4s3MGEzcfAC5RIewATf8yNh6ADt+zu9JnyVUn78mwKjkRZNQBPQBDQBTUAT8CXQtq2pqmrGW995qbrgzoui2BDuaIw5J0myTtP0KYXq9jPuHgzcvxLuQchV0zSnuq4nA6/v1TwYmOe5I+ASjQwe4t/jl2U5pxQvtEwRwx0NZCgSKQJEIsWAKKQoEIEMnsWM8ZUsy+5Uv+Nz/Apyzm197frWiQN5wtDN9wzgWW2tPfTF+NqJDjFiNosBEbj3KPhiHVqHwokAkbhoIBoXBaTfLUsd3FDfYMZxiXnNLNC4DzFwTbi//FEH8vQyTUAT0AQ0AU3gm8ALHbTEH/xuryUAAAAASUVORK5CYII=" alt="">
             </a>
         </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <div class="con"  v-for="(ind) in item.itemList" :key="Number(ind.itemId)" >
             <div class="list-left">
@@ -64,6 +71,8 @@ export default {
              totalList:[],
              i:2
 =======
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
            <div class="booklist" v-for="(item,index) in totalList[0].itemList" :key="item.id">
                     <div class="books-">
                         <div class="list-left">
@@ -177,12 +186,16 @@ export default {
         return {
              totalList:[],
              i:1
+<<<<<<< HEAD
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
+=======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         }
     },
      methods:{
         async handleauctionApi(catPage){
             let data=await auctionApi(catPage);
+<<<<<<< HEAD
 <<<<<<< HEAD
             console.log(data.data.list);
             this.totalList==data.data.list?data.data.list:'';
@@ -210,6 +223,8 @@ export default {
     // }   
 
 =======
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
            this.totalList=data.data.list;
             sessionStorage.setItem("gzmr",JSON.stringify(data.data.list))
           
@@ -236,6 +251,9 @@ export default {
 //       })
 //       this.$refs.scroll.handleScroll();
 //   }
+<<<<<<< HEAD
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
+=======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 }
 </script>
@@ -245,10 +263,15 @@ export default {
 }
 .min{
 <<<<<<< HEAD
+<<<<<<< HEAD
     min-height: 1500px;
     background: #fff;
 }
 
+=======
+    min-height: 2000px;
+}
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 =======
     min-height: 2000px;
 }
@@ -290,12 +313,16 @@ export default {
 
 .booklist{
 <<<<<<< HEAD
+<<<<<<< HEAD
     .con{
         height: 96px;
          padding: 0 .4rem 0rem .4rem;
            margin-bottom: .48rem;
     }
   
+=======
+    padding: 0 .4rem .48rem .4rem;
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 =======
     padding: 0 .4rem .48rem .4rem;
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
@@ -310,7 +337,10 @@ export default {
         img{
             width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
             height: 100%;
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 =======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         }
@@ -318,7 +348,11 @@ export default {
             position: absolute;
             left: .14rem;
 <<<<<<< HEAD
+<<<<<<< HEAD
             bottom: .5rem;
+=======
+            bottom: .1rem;
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 =======
             bottom: .1rem;
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330

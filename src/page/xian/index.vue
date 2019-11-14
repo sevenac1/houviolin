@@ -1,5 +1,6 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <div>
          <div id="hea">
@@ -7,11 +8,16 @@
                         <span class="iconfont icon-fanhui"></span>
                 </v-touch>
 =======
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
     <div>
          <div id="hea">
                 <a href="" class="back">
                         <span class="iconfont icon-fanhui"></span>
                 </a>
+<<<<<<< HEAD
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
+=======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
                 <div class="paimai">全部拍卖</div>
                 <div class="srearch">
@@ -24,16 +30,22 @@
         <div >
                 <div id="nav">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <van-dropdown-menu active-color="#ee0a24">
                         <div class="ttt">
                                   <van-dropdown-item v-model="value1" :options="option1" />
                         </div>
                   
 =======
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
                 <div  class="dw">                 
                 </div>  
                     <van-dropdown-menu active-color="#ee0a24">
                     <van-dropdown-item v-model="value1" :options="option1" />
+<<<<<<< HEAD
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
+=======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
                     <van-dropdown-item v-model="value2" :options="option2" />
                     </van-dropdown-menu>
@@ -43,6 +55,7 @@
         </div>
                
         </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
      
     <Salesvolume :value="value1"/>
@@ -66,6 +79,8 @@ export default {
             value1: 0,
             value2: 'a',
 =======
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         <div id="list">
                         <ul class="list-item">
                                 <li class="item" v-for="item in itemList" :key="item.itemId">
@@ -109,6 +124,9 @@ export default {
             itemList:[],
               value1: 0,
              value2: 'a',
+<<<<<<< HEAD
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
+=======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
       option1: [
         { text: '剩余时间由少到多',value: 0},
@@ -138,6 +156,7 @@ export default {
         }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     methods:{
        
           onConfirm() {
@@ -150,6 +169,8 @@ export default {
     },
    
 =======
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
     created(){
        this.handlexianApi(20,1);
     },
@@ -163,6 +184,9 @@ export default {
       this.$refs.item.toggle();
     }
     }
+<<<<<<< HEAD
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
+=======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 }
 </script>
@@ -173,7 +197,11 @@ export default {
 }
 .van-dropdown-menu{
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin-left: -30px
+=======
+    margin-left: -50px
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 =======
     margin-left: -50px
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
@@ -186,9 +214,12 @@ export default {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .wrapper{
     height: 2549px;
 }
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 =======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         #hea{
@@ -196,17 +227,23 @@ export default {
         line-height: .88rem;
         padding: .16rem .2rem .16rem .16rem;
 <<<<<<< HEAD
+<<<<<<< HEAD
         background: #fff;
         display: flex;
         .back{
             width: .8rem;
             height: .8rem;
 =======
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         background-color: #fff;
         display: flex;
         .back{
             width: .6rem;
             height: .6rem;
+<<<<<<< HEAD
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
+=======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         }
         .paimai{
@@ -248,8 +285,12 @@ export default {
 
 #list{
 <<<<<<< HEAD
+<<<<<<< HEAD
    
 
+=======
+    padding: .2rem;
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 =======
     padding: .2rem;
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330

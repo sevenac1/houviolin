@@ -1,5 +1,6 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
        <div class="t">
                 <div id="head">
@@ -29,6 +30,36 @@
             </div>
         </div>
 
+=======
+   <div>
+                <div id="head">
+                        <div class="head-left">
+                            <a href=""><img :src="head.headimg" alt=""></a>
+                        </div>
+                        <a href="">
+                            <div class="head-center-img">
+                            <img :src="head.headimg2" alt="">
+                            <div>{{head.headtitle}}</div>
+                            </div>
+                        </a>
+                        <div class="head-right">
+                            <a href="" class="head-r-two">
+                                <div>
+                                    <i class="mes">0</i>
+                                </div>
+                                <img :src="head.headimg3" alt="">
+                            </a>
+                        </div>
+                 </div>
+
+                 <!-- banner -->
+        <div id="banner">
+            <div class="banner-container">
+                <img src="https://img0.kfzimg.com/operation/4a/d8/4ad8e82aa849f5fadd3ffd446ff93c35.png" alt="">
+            </div>
+        </div>
+
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 =======
    <div>
                 <div id="head">
@@ -111,7 +142,10 @@
             </div>
         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
     </div>
     <!--  -->
         <div id="title-box">
@@ -156,6 +190,9 @@
         <Paimai />
         <!--  -->
        
+<<<<<<< HEAD
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
+=======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
     </div>
     <!--  -->
@@ -210,7 +247,11 @@
 <script>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import  {auctionApi} from "@api/auction"
+=======
+
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 =======
 
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
@@ -225,7 +266,11 @@ export default {
     data(){
        return {
 <<<<<<< HEAD
+<<<<<<< HEAD
           totalList:[],
+=======
+          
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 =======
           
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
@@ -348,6 +393,7 @@ export default {
        }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     //   methods:{
     //     async handleauctionApi(catPage){
     //         let data=await auctionApi(catPage);
@@ -365,10 +411,15 @@ export default {
 <style lang="scss" >
 
 =======
+=======
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
    
 }
 </script>
 <style lang="scss" >
+<<<<<<< HEAD
+>>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
+=======
 >>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 .books-{
         height: 1.96rem;
