@@ -5,6 +5,10 @@ export default {
     meta:{
         flag:true,
         requiredAuth:false,
+<<<<<<< HEAD
     }
+=======
+    } 
+>>>>>>> master
 
 }
