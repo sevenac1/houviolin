@@ -2,10 +2,14 @@ const path=require("path");
 module.exports={
     devServer:{
         proxy:{
-            "/":{
+            "/operation":{
                 target:"https://m.kongfz.com",
                 changeOrigin:true
-            }
+            },
+            "/book":{
+                target:"https://m.kongfz.com",
+                changeOrigin:true
+            },
         }
     },
     //别名配置
@@ -27,3 +31,5 @@ module.exports={
     }
 
 }
+
+

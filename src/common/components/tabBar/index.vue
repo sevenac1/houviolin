@@ -6,10 +6,10 @@
       :key="index"
       :to="item.path"
       tag="div"
-      
+      @click.native="handleToggle(index)"
     >
       <div>
-        <img :src="activeIndex == index ? item.img2 : item.img" @click="handleToggle(index)" alt/>
+        <img  :src="activeIndex == index ? item.img2 : item.img" alt/>
       </div>
       <div>{{item.title}}</div>
     </router-link>
@@ -58,6 +58,7 @@ export default {
   methods:{
       handleToggle(index){
           this.activeIndex = index;
+          console.log(index,this.activeIndex);
       }
   }
 };

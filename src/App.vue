@@ -1,20 +1,22 @@
 <template>
   <div class="app">
     <router-view></router-view>
-    <tabBar />
+    <tabBar v-if="$route.meta.flag"/>
   </div>
  
 </template>
 
 <script>
-import tabBar from "./components/tabBar"
+import VueTouch from 'vue-touch'
+import tabBar from "@common/components/tabBar"
+
 export default {
   name: 'App',
   components:{
     tabBar,
+    VueTouch
   },
 created(){
-  console.log(this,this.$route);
 },
 
 

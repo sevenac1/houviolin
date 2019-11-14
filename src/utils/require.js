@@ -4,9 +4,10 @@ const server=axios.create({
     withCredentials:true
 })
 server.interceptors.request.use((config)=>{
-    if(config.method=="get"){
+    if(config.method=="GET"){
         config.params={...config.dadta};
     }
+    return config;
     // config.headers["content-type"]="applicetion/json";
     // config.headers["token"]=""
 },(err)=>{

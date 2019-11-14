@@ -2,149 +2,66 @@
   <div id="main" class="main">
     <div id="main_head" class="main_head">
       <div class="main_head_1">
-        <a href="index.html">
+        <router-link to="/home" tag="a">
           <img
             src="data:image/png;base64,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"
             alt
           />
-        </a>
+        </router-link>
       </div>
-      <div class="main_head_2">
-        <a href="sousuo.html">
+      <router-link to="/sousuo" tag="a">
+        <div class="main_head_2">
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAfCAMAAACxiD++AAAAPFBMVEUAAACampqampqampqkpKSampqZmZmZmZmZmZmampqZmZmbm5uampqZmZmampqgoKCZmZmZmZmZmZmZmZnxEDpHAAAAE3RSTlMAQtiKCszp8+K/dmtTPCYVhe+oUAggIwAAALpJREFUKM+FU9kOwyAMg3BTCm39//86jU1NT+IXhGxicinGbBKFQMnM6gE2e+zw2V75EgEyulpbtSEgljO/AE7zVTtgOfIbMKkTJmA7vl/11VOvHKMAzLMCKP//R45/dom/XDKceoRD7qdng6uJ7/UDqRcQvjU1MI/sTiV2uHukHqe+CWp3D7BvAosgCkQL8ZNimmKhpFKLzRLbLQ2MMHK+jYd2BbXh2DcCteHidMVg9brCqeHyNkdKxAeG9gwGFxIALwAAAABJRU5ErkJggg=="
             alt
           />
-        </a>
-        <div>商品名称 作者 出版社 ISBN</div>
-      </div>
+          <div>商品名称 作者 出版社 ISBN</div>
+        </div>
+      </router-link>
     </div>
-    <div id="main_pic" class="main_pic">
-      <a href="china.html">
-        <img src="https://img0.kfzimg.com/operation/8e/35/8e354f0cb20bf77f7d8b93b39330cfad.jpg" alt />
-      </a>
-      <a href="china.html">
-        <img src="https://img0.kfzimg.com/operation/65/0a/650ae1226aa65d8d0ee501b28df9a965.jpg" alt />
-      </a>
-      <a href="china.html">
-        <img src="https://img0.kfzimg.com/operation/a9/a3/a9a38499bcec0528d51fd68b5ce7f0ab.jpg" alt />
-      </a>
-      <a href="china.html">
-        <img src="https://img0.kfzimg.com/operation/76/74/76740db1b141b05e83810b0f385120bf.jpg" alt />
-      </a>
-      <a href="china.html">
-        <img src="https://img0.kfzimg.com/operation/2e/9c/2e9c3afc1516b0a75bc284dd0c3ac107.jpg" alt />
-      </a>
-    </div>
+    <!-- <div id="main_pic" class="main_pic"> -->
+      <!-- <router-link to="/china" tag="a" v-for="(item,index) in img" :key="index">
+        <img :src="item" />
+      </router-link> -->
+      <van-swipe :autoplay="3000">
+        <van-swipe-item v-for="(image, index) in images" :key="index">
+          <img v-lazy="image" />
+        </van-swipe-item>
+      </van-swipe>
+      
+    <!-- </div> -->
     <div id="main_nav" class="main_nav">
-      <div class="nav_box">
+      <div class="nav_box" v-for="(item,index) in navlist" :key="index">
         <div>
-          <a href="list.html">
-            <img
-              src="https://img0.kfzimg.com/operation/7e/67/7e67ee755c4751b08ca2cf4f6c167b5a.png"
-              alt
-            />
-          </a>
+          <router-link to="/classification" tag="a">
+            <img :src="item.img" alt />
+          </router-link>
         </div>
-        <div>线装古籍</div>
-      </div>
-      <div class="nav_box">
-        <div>
-          <a href="list.html">
-            <img
-              src="https://img0.kfzimg.com/operation/68/78/6878c2adf90826c96b06689d4d0e9ad8.png"
-              alt
-            />
-          </a>
-        </div>
-        <div>民国旧书</div>
-      </div>
-      <div class="nav_box">
-        <div>
-          <a href="list.html">
-            <img
-              src="https://img0.kfzimg.com/operation/96/79/9679391cb144b9da2d5934baf7798bb3.png"
-              alt
-            />
-          </a>
-        </div>
-        <div>名人墨迹</div>
-      </div>
-      <div class="nav_box">
-        <div>
-          <a href="list.html">
-            <img
-              src="https://img0.kfzimg.com/operation/87/37/873758d4bbdf66f53e4aa444b7489756.png"
-              alt
-            />
-          </a>
-        </div>
-        <div>古玩杂项</div>
-      </div>
-      <div class="nav_box">
-        <div>
-          <img
-            src="https://img0.kfzimg.com/operation/0d/f9/0df9dbd219fbe285efb7412b4649290f.png"
-            alt
-          />
-        </div>
-        <div>全部分类</div>
+        <div>{{item.title}}</div>
       </div>
     </div>
     <div id="main_taday" class="main_taday">
-      <div class="taday_box">
+      <div class="taday_box" v-for="(item,index) in tadayList" :key="index">
         <div>
-          <p>今日上新</p>
-          <p>发现新上好书</p>
+          <p>{{item.title}}</p>
+          <p>{{item.subTitle}}</p>
         </div>
         <div>
-          <img
-            src="https://img0.kfzimg.com/operation/7d/ec/7dec8863d15871dfa80e06862635e9fb.png"
-            alt
-          />
-        </div>
-      </div>
-      <div class="taday_box">
-        <div>
-          <p>书店排行榜</p>
-          <p>发现口碑好店</p>
-        </div>
-        <div>
-          <img
-            src="https://img0.kfzimg.com/operation/71/14/71147277eef7ff00046290e19a11a082.png"
-            alt
-          />
+          <img :src="item.imgUrl" alt />
         </div>
       </div>
     </div>
     <div id="main_taday" class="main_taday">
-      <div class="taday_box">
-        <a href="newbooks.html">
+      <div class="taday_box" v-for="(item,index) in newList" :key="index">
+        <router-link to="/newbooks" tag="a">
           <div>
-            <p>新书频道</p>
-            <p>发现孔网新书</p>
+            <p>{{item.title}}</p>
+            <p>{{item.subTitle}}</p>
           </div>
           <div>
-            <img
-              src="https://img0.kfzimg.com/operation/81/ae/81ae33f2ce1d23818c64b917e9780269.png"
-              alt
-            />
+            <img :src="item.imgUrl" alt />
           </div>
-        </a>
-      </div>
-      <div class="taday_box">
-        <a href="booklist.html">
-          <div>
-            <p>藏书单</p>
-            <p>为你推荐好书</p>
-          </div>
-          <div>
-            <img
-              src="https://img0.kfzimg.com/operation/af/e6/afe651e4767bf0c94b7d53275c061831.png"
-              alt
-            />
-          </div>
-        </a>
+        </router-link>
       </div>
     </div>
     <div class="main_kong"></div>
@@ -153,94 +70,55 @@
     <div class="main_inner">
       <div class="inner_box1">
         <div>
-          <p>全部拍卖</p>
-          <p>日均4万余件拍品</p>
+          <p>{{allList.title}}</p>
+          <p>{{allList.subTitle}}</p>
         </div>
         <div>
-          <img
-            src="https://img0.kfzimg.com/operation/a8/ec/a8ec2fa9d76ae778aec20ee04d27bd69.png"
-            alt
-          />
+          <img :src="allList.imgUrl" alt />
         </div>
       </div>
       <div class="inner_box2">
         <div class="inner_2">
-          <a href="artwork.html">
+          <router-link to="/artwork" tag="a">
             <div>
-              <p>艺术品专场</p>
-              <p>名人字画墨迹等</p>
+              <p>{{artList.title}}</p>
+              <p>{{artList.subTitle}}</p>
             </div>
             <div>
-              <img
-                src="https://img0.kfzimg.com/operation/37/41/37411da7e2306956f34840cb1503894e.png"
-                alt
-              />
+              <img :src="artList.imgUrl" alt />
             </div>
-          </a>
+          </router-link>
         </div>
         <div class="inner_2">
           <div>
-            <p>低价拍卖</p>
-            <p>1元起拍捡漏</p>
+            <p>{{djList.title}}</p>
+            <p>{{djList.subTitle}}</p>
           </div>
           <div>
-            <img
-              src="https://img0.kfzimg.com/operation/6a/e3/6ae3e6b33782dfc51821271ac628a3af.png"
-              alt
-            />
+            <img :src="djList.imgUrl" alt />
           </div>
         </div>
       </div>
     </div>
     <div id="main_taday" class="main_taday">
-      <div class="taday_box">
+      <div class="taday_box" v-for="(item,index) in zhenList" :key="index">
         <div>
-          <p>珍本拍卖</p>
-          <p>古籍善本</p>
+          <p>{{item.title}}</p>
+          <p>{{item.subTitle}}</p>
         </div>
         <div>
-          <img
-            src="https://img0.kfzimg.com/operation/4b/e7/4be7d7aabe1d8188411e178c60fb4651.png"
-            alt
-          />
-        </div>
-      </div>
-      <div class="taday_box">
-        <div>
-          <p>今日热点</p>
-          <p>每日必看</p>
-        </div>
-        <div>
-          <img
-            src="https://img0.kfzimg.com/operation/bf/10/bf109d68796166dc526cd72123571f11.png"
-            alt
-          />
+          <img :src="item.imgUrl" alt />
         </div>
       </div>
     </div>
     <div id="main_taday" class="main_taday">
-      <div class="taday_box">
+      <div class="taday_box" v-for="(item,index) in bagList" :key="index">
         <div>
-          <p>大众拍卖</p>
-          <p>大家都在拍</p>
+          <p>{{item.title}}</p>
+          <p>{{item.subTitle}}</p>
         </div>
         <div>
-          <img
-            src="https://img0.kfzimg.com/operation/2a/f0/2af0cd06e0886d1af2ec3419d468415f.png"
-            alt
-          />
-        </div>
-      </div>
-      <div class="taday_box">
-        <div>
-          <p>三天热点</p>
-          <p>热拍推荐</p>
-        </div>
-        <div>
-          <img
-            src="https://img0.kfzimg.com/operation/f4/51/f451368d25801533024e3817bfbb482f.png"
-            alt
-          />
+          <img :src="item.imgUrl" alt />
         </div>
       </div>
     </div>
@@ -253,78 +131,15 @@
     <div class="main_model">
       <div class="model_box">
         <div class="swiper">
-          <div class="swiper_box">
+          <div class="swiper_box" v-for="(item,index) in booksList" :key="index">
             <div class="img_box">
-              <img
-                src="https://booklibimg.kfzimg.com/data/book_lib_img_v2/user/1/5e5d/5e5da332be3bf307465985253d89c2aa_0_1_300_300.jpg"
-                alt
-              />
+              <img :src="item.imgUrl" alt />
             </div>
-            <div class="swiper_title">羊之歌——我的回想</div>
-            <div class="swiper_author">[日]加藤周一 著；翁家慧 译</div>
+            <div class="swiper_title">{{item.itemName}}</div>
+            <div class="swiper_author">{{item.author}}</div>
             <div class="swiper_price">
               <span>￥</span>
-              <span>20</span>
-              <span>起</span>
-            </div>
-          </div>
-          <div class="swiper_box">
-            <div class="img_box">
-              <img
-                src="https://booklibimg.kfzimg.com/data/book_lib_img_v2/user/1/a65b/a65bb65a88827ab3c6abd4f695e257c5_0_1_300_300.jpg"
-                alt
-              />
-            </div>
-            <div class="swiper_title">汗青堂丛书037·海上丝绸之路</div>
-            <div class="swiper_author">[德]罗德里希·普塔克 著；史敏岳 译</div>
-            <div class="swiper_price">
-              <span>￥</span>
-              <span>28</span>
-              <span>起</span>
-            </div>
-          </div>
-          <div class="swiper_box">
-            <div class="img_box">
-              <img
-                src="https://booklibimg.kfzimg.com/data/book_lib_img_v2/user/1/ad26/ad26a2e6d2c2898e4e4185de3367bb86_0_1_300_300.jpg"
-                alt
-              />
-            </div>
-            <div class="swiper_title">伦勃朗</div>
-            <div class="swiper_author">[芬兰]唐克雷德·博雷纽斯（Tancred Borenius） 著；吴啸雷 译</div>
-            <div class="swiper_price">
-              <span>￥</span>
-              <span>240</span>
-              <span>起</span>
-            </div>
-          </div>
-          <div class="swiper_box">
-            <div class="img_box">
-              <img
-                src="https://booklibimg.kfzimg.com/data/book_lib_img_v2/user/1/f1c2/f1c299a21bde7342907bc28020311ecd_0_1_300_300.jpg"
-                alt
-              />
-            </div>
-            <div class="swiper_title">自指引擎（精装）</div>
-            <div class="swiper_author">[日]圆城塔 著；丁丁虫 译</div>
-            <div class="swiper_price">
-              <span>￥</span>
-              <span>31.05</span>
-              <span>起</span>
-            </div>
-          </div>
-          <div class="swiper_box">
-            <div class="img_box">
-              <img
-                src="https://booklibimg.kfzimg.com/data/book_lib_img_v2/user/1/80d1/80d1e61f18d65e3566fd5390e7f4e172_0_1_300_300.jpg"
-                alt
-              />
-            </div>
-            <div class="swiper_title">马背上的朝廷：巡幸与清朝统治的建构，1680—1785（海外中国研究丛书·特别版）</div>
-            <div class="swiper_author">[美]张勉治 著</div>
-            <div class="swiper_price">
-              <span>￥</span>
-              <span>35.64</span>
+              <span>{{item.price}}</span>
               <span>起</span>
             </div>
           </div>
@@ -340,55 +155,492 @@
     <div class="tuijian_list">
       <div class="tuijian_list_box">
         <div class="tj_list_main">
-          <div class="tj_list_main_box">
-            <a href="china.html" class="tj_list_main_box_link">
+          <div class="tj_list_main_box" v-for="(item,index) in booksList2" :key="index">
+            <router-link to="/china" tag="a" class="tj_list_main_box_link">
               <div>
-                <img
-                  src="https://img0.kfzimg.com/operation/64/c6/64c6beec81534d73b4db2ba54918951c.jpg"
-                  alt
-                />
+                <img :src="item.imgUrl" alt />
               </div>
               <div class="kong3"></div>
-              <div>红尘影像诗，时代记录者</div>
-            </a>
-          </div>
-          <div class="tj_list_main_box">
-            <a href class="tj_list_main_box_link">
-              <div>
-                <img
-                  src="https://img0.kfzimg.com/operation/64/c6/64c6beec81534d73b4db2ba54918951c.jpg"
-                  alt
-                />
-              </div>
-              <div class="kong3"></div>
-              <div>红尘影像诗，时代记录者</div>
-            </a>
-          </div>
-          <div class="tj_list_main_box">
-            <a href class="tj_list_main_box_link">
-              <div>
-                <img
-                  src="https://img0.kfzimg.com/operation/64/c6/64c6beec81534d73b4db2ba54918951c.jpg"
-                  alt
-                />
-              </div>
-              <div class="kong3"></div>
-              <div>红尘影像诗，时代记录者</div>
-            </a>
+              <div>{{item.description}}</div>
+            </router-link>
           </div>
         </div>
       </div>
     </div>
     <div class="main_kong"></div>
     <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>新书广场</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="main_newgc">
+      <ul class="main_newgc_list">
+        <li class="newgc_list_box" v-for="(item,index) in newbookgc" :key="index">
+          <a href>
+            <div class="newgc_l">
+              <img :src="item.imgUrl" alt />
+              <div class="newgc_pri">
+                <span>￥</span>
+                <span>{{item.price}}</span>
+              </div>
+            </div>
+            <div class="newgc_r">
+              <div class="newgc_r_1">{{item.itemNane}}</div>
+              <div class="newgc_r_2">{{item.importantDesc}}</div>
+              <div class="newgc_r_3">
+                <span v-for="(item2,index2) in item.tags" :key="index2">{{item2}}</span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>旧书-国学经典</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="main_newgc">
+      <ul class="main_newgc_list">
+        <li class="newgc_list_box" v-for="(item,index) in oldbook" :key="index">
+          <a href>
+            <div class="newgc_l">
+              <img :src="item.imgUrl" alt />
+              <div class="newgc_pri">
+                <span>￥</span>
+                <span>{{item.price}}</span>
+              </div>
+            </div>
+            <div class="newgc_r">
+              <div class="newgc_r_1">{{item.itemName}}</div>
+              <div
+                class="newgc_r_2 author"
+              >{{item.author}} / {{item.press}} / {{item.pubDate}} / {{item.binding}}</div>
+              <div class="newgc_r_desc">{{item.contentIntroduction}}</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="main_hyh">换一换</div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>新书-新近出版</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="main_newgc">
+      <ul class="main_newgc_list">
+        <li class="newgc_list_box" v-for="(item,index) in newbookcb" :key="index">
+          <a href>
+            <div class="newgc_l">
+              <img :src="item.imgUrl" alt />
+              <div class="newgc_pri">
+                <span>￥</span>
+                <span>{{item.price}}</span>
+              </div>
+            </div>
+            <div class="newgc_r">
+              <div class="newgc_r_1">{{item.itemName}}</div>
+              <div
+                class="newgc_r_2 author"
+              >{{item.author}} / {{item.press}} / {{item.pubDate}} / {{item.binding}}</div>
+              <div class="newgc_r_desc">{{item.contentIntroduction}}</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="main_hyh">换一换</div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>新书销售排行榜</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="main_newgc">
+      <ul class="main_newgc_list">
+        <li class="newgc_list_box" v-for="(item,index) in newbookphb" :key="index">
+          <a href>
+            <div class="newgc_l">
+              <img :src="item.imgUrl" alt />
+              <div class="newgc_pri">
+                <span>￥</span>
+                <span>{{item.price}}</span>
+              </div>
+            </div>
+            <div class="newgc_r">
+              <div class="newgc_r_1">{{item.itemName}}</div>
+              <div
+                class="newgc_r_2 author"
+              >{{item.author}} / {{item.press}} / {{item.pubDate}} / {{item.binding}}</div>
+              <div class="newgc_r_desc">{{item.contentIntroduction}}</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="main_hyh">换一换</div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>旧籍寻踪</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="books_list1">
+      <div class="books_list_m">
+        <ul class="list_m_box">
+          <li class="list_m_box_m" v-for="(item,index) in jjxzList" :key="index">
+            <div class="pic">
+              <img :src="item.imgUrl" alt />
+            </div>
+            <div class="title">{{item.itemName}}</div>
+            <div class="pri">
+              <span>￥</span>
+              <span>{{item.price}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>艺文集览</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="books_list1">
+      <div class="books_list_m">
+        <ul class="list_m_box">
+          <li class="list_m_box_m" v-for="(item,index) in ywjlList" :key="index">
+            <div class="pic">
+              <img :src="item.imgUrl" alt />
+            </div>
+            <div class="title">{{item.itemName}}</div>
+            <div class="pri">
+              <span>￥</span>
+              <span>{{item.price}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>古籍荐览</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="books_list1">
+      <div class="books_list_m">
+        <ul class="list_m_box">
+          <li class="list_m_box_m" v-for="(item,index) in gjjlList" :key="index">
+            <div class="pic">
+              <img :src="item.imgUrl" alt />
+            </div>
+            <div class="title">{{item.itemName}}</div>
+            <div class="pri">
+              <span>￥</span>
+              <span>{{item.price}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>民国旧书</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="books_list1">
+      <div class="books_list_m">
+        <ul class="list_m_box">
+          <li class="list_m_box_m" v-for="(item,index) in mgjsList" :key="index">
+            <div class="pic">
+              <img :src="item.imgUrl" alt />
+            </div>
+            <div class="title">【新文学珍本】 抗战小说 硬精装本《三百八十个》 上海良友图书公司1935年初版 鲛人（项德言）著！,</div>
+            <div class="pri">
+              <span>￥</span>
+              <span>650</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>古籍拍卖</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>民国图书文献拍卖</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="books_list1">
+      <div class="books_list_m">
+        <ul class="list_m_box">
+          <li class="list_m_box_m" v-for="(item,index) in mgtsList" :key="index">
+            <div class="pic">
+              <img :src="item.imgUrl" alt />
+              <div class="cj">{{item.bidNum}}次出价</div>
+            </div>
+            <div class="title">{{item.itemName}}</div>
+            <div class="pri">
+              <i>{{item.pmprice.n}}</i>
+              <span>￥</span>
+              <span>{{item.pmprice.c}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>民国期刊拍卖</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="books_list1">
+      <div class="books_list_m">
+        <ul class="list_m_box">
+          <li class="list_m_box_m" v-for="(item,index) in mgqkList" :key="index">
+            <div class="pic">
+              <img :src="item.imgUrl" alt />
+              <div class="cj">{{item.bidNum}}出价</div>
+            </div>
+            <div class="title">{{item.itemName}}</div>
+            <div class="pri">
+              <i>{{item.pmprice.n}}</i>
+              <span>￥</span>
+              <span>{{item.pmprice.c}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>艺术品拍卖</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="art_item">
+      <ul class="art_item_box">
+        <li class="art_item_x" v-for="(item,index) in bqList" :key="index">{{item.title}}</li>
+        <!-- <li class="art_item_x">名人字画</li>
+        <li class="art_item_x">连环画</li>
+        <li class="art_item_x">钱币</li>
+        <li class="art_item_x">版画宣传画</li>
+        <li class="art_item_x">邮票税票</li>
+        <li class="art_item_x">古玩杂项</li>-->
+      </ul>
+    </div>
+    <div class="books_list1">
+      <div class="books_list_m">
+        <ul class="list_m_box">
+          <li class="list_m_box_m" v-for="(item,index) in ysppmList" :key="index">
+            <div class="pic">
+              <img :src="item.imgUrl" alt />
+              <div class="cj">{{item.bidNum}}次出价</div>
+            </div>
+            <div class="title">{{item.itemName}}</div>
+            <div class="pri">
+              <i>{{item.pmprice.n}}</i>
+              <span>￥</span>
+              <span>{{item.pmprice.c}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main_kong"></div>
+    <div class="main_kong2"></div>
+    <div class="main_hstj main_sdtj">
+      <span>为您推荐</span>
+      <a href class="iconfont">更多</a>
+    </div>
+    <div class="recommend_list">
+      <ul>
+        <li v-for="(item,index) in wntjList" :key="index">
+          <a href>
+            <div class="img_box">
+              <img :src="item.imgMiddle" alt />
+            </div>
+            <div class="title">{{item.itemName}}</div>
+            <div class="middle_box clearfix">
+              <div class="phase">{{item.quality}}</div>
+              <div class="address">{{item.area}}</div>
+            </div>
+            <div class="price">
+              <span>￥</span>
+              <span>{{item.price}}</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="inner">- 没有更多 -</div>
   </div>
 </template>
 <script>
+import { homeApi, homebookApi } from "@api/home";
+import { Lazyload,Swipe,SwipeItem } from "vant";
 export default {
-  name: "Home"
+  name: "Home",
+  components: {
+    [Lazyload.name]: Lazyload,
+    [Swipe.name]:Swipe,
+    [SwipeItem.name]:SwipeItem,
+  },
+  data() {
+    return {
+      images: [
+        "https://img0.kfzimg.com/operation/c1/f3/c1f3dd8ee66df73a4c2011986c1b7902.jpg",
+        "https://img0.kfzimg.com/operation/86/b4/86b4c29face46398d16888903dcc4d86.jpg",
+        "https://img0.kfzimg.com/operation/e3/f7/e3f720048d6a6e850118d6dc0d1f8980.jpg",
+        "https://img0.kfzimg.com/operation/ec/68/ec6860c8416b4400ed514bf934c99874.jpg",
+        "https://img0.kfzimg.com/operation/65/0a/650ae1226aa65d8d0ee501b28df9a965.jpg",
+        "https://img0.kfzimg.com/operation/6f/86/6f86e5bb936c153ce1a9c58e5875fab0.jpg",
+        "https://img0.kfzimg.com/operation/2e/9c/2e9c3afc1516b0a75bc284dd0c3ac107.jpg",
+        "https://img0.kfzimg.com/operation/57/82/57825be21c468f9df23d4224449c57ba.jpg"
+      ],
+      navlist: [
+        {
+          title: "线装古籍",
+          img:
+            "https://img0.kfzimg.com/operation/7e/67/7e67ee755c4751b08ca2cf4f6c167b5a.png"
+        },
+        {
+          title: "民国旧书",
+          img:
+            "https://img0.kfzimg.com/operation/68/78/6878c2adf90826c96b06689d4d0e9ad8.png"
+        },
+        {
+          title: "名人墨迹",
+          img:
+            "https://img0.kfzimg.com/operation/96/79/9679391cb144b9da2d5934baf7798bb3.png"
+        },
+        {
+          title: "古玩杂项",
+          img:
+            "https://img0.kfzimg.com/operation/87/37/873758d4bbdf66f53e4aa444b7489756.png"
+        },
+        {
+          title: "全部分类",
+          img:
+            "https://img0.kfzimg.com/operation/0d/f9/0df9dbd219fbe285efb7412b4649290f.png"
+        }
+      ],
+      booksList: [],
+      booksList2: [],
+      tadayList: [],
+      newList: [],
+      zhenList: [],
+      bagList: [],
+      allList: {},
+      artList: {},
+      djList: {},
+      newbookgc: {},
+      oldbook: {},
+      newbookcb: {},
+      newbookphb: {},
+      jjxzList: {},
+      ywjlList: {},
+      gjjlList: {},
+      mgjsList: {},
+      mgtsList: {},
+      mgqkList: {},
+      ysppmList: {},
+      wntjList: {},
+      bqList: []
+    };
+  },
+  created() {
+    this.handlehomeApi1(1);
+    this.handlehomeApi2(2);
+    this.handlehomeApi3(3);
+    this.handlehomeApi4(4);
+    this.handlehomeApi5(5);
+    this.handlehomeApi6(6);
+    this.handlehomeApi7(7);
+    this.handlehomeApi8(16);
+    this.handlehomeApi9(1);
+    this.handlehomeApi10(8);
+  },
+  methods: {
+    async handlehomeApi1(currPage) {
+      let data = await homeApi(currPage);
+      this.tadayList = data.result.list[0].data;
+      this.newList = data.result.list[1].data;
+      this.allList = data.result.list[2].data[0];
+      this.artList = data.result.list[2].data[1];
+      this.djList = data.result.list[2].data[2];
+    },
+    async handlehomeApi2(currPage) {
+      let data = await homeApi(currPage);
+      this.zhenList = data.result.list[0].data;
+      this.bagList = data.result.list[1].data;
+    },
+    async handlehomeApi3(currPage) {
+      let data = await homeApi(currPage);
+      this.booksList = data.result.list[0].data[0].data;
+      this.booksList2 = data.result.list[1].data;
+      this.newbookgc = data.result.list[2].data[0].data;
+    },
+    async handlehomeApi4(currPage) {
+      let data = await homeApi(currPage);
+      this.oldbook = data.result.list[0].data[0].data;
+      this.newbookcb = data.result.list[1].data[0].data;
+      this.newbookphb = data.result.list[2].data[0].data;
+      // console.log(this.newbookphb);
+    },
+    async handlehomeApi5(currPage) {
+      let data = await homeApi(currPage);
+      this.jjxzList = data.result.list[0].data[0].data;
+      this.ywjlList = data.result.list[1].data[0].data;
+      this.gjjlList = data.result.list[2].data[0].data;
+      // console.log(this.jjxzList);
+    },
+    async handlehomeApi6(currPage) {
+      let data = await homeApi(currPage);
+      this.mgjsList = data.result.list[0].data[0].data;
+      this.mgtsList = data.result.list[2].data[0].data;
+      // console.log(this.mgjsList,this.mgtsList);
+    },
+    async handlehomeApi7(currPage) {
+      let data = await homeApi(currPage);
+      this.mgqkList = data.result.list[0].data[0].data;
+      this.ysppmList = data.result.list[1].data[0].data;
+      this.bqList = data.result.list[1].bqList;
+      // console.log(this.bqList);
+      // console.log(this.mgqkList,this.ysppmList);
+    },
+    async handlehomeApi8(place) {
+      let data = await homebookApi(place);
+      this.wntjList = data.data;
+
+      // console.log(this.wntjList);
+    },
+    async handlehomeApi9(place) {
+      let data = await homebookApi(place);
+      // console.log(data);
+
+      // console.log(this.wntjList);
+    },
+    async handlehomeApi10(currPage) {
+      let data = await homeApi(currPage);
+      // console.log(data);
+    }
+  }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scope>
 .main {
   width: 100%;
   flex: 1;
@@ -428,22 +680,32 @@ export default {
     }
   }
 }
-.main_pic {
+.van-swipe{
   width: 100%;
   height: 3.2rem;
-  display: flex;
+  // display: flex;
   overflow: auto;
-  a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-  }
   img {
     width: 100%;
     height: 100%;
   }
 }
+// .main_pic {
+//   width: 100%;
+//   height: 3.2rem;
+//   display: flex;
+//   overflow: auto;
+//   a {
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     flex-shrink: 0;
+//   }
+//   img {
+//     width: 100%;
+//     height: 100%;
+//   }
+// }
 .main_nav {
   /* width:rem; */
   height: 2.38rem;
@@ -463,6 +725,7 @@ export default {
   div:nth-child(1) {
     width: 0.88rem;
     height: 0.88rem;
+    margin-bottom: 0.05rem;
     img {
       width: 100%;
       height: 100%;
@@ -757,7 +1020,7 @@ export default {
   width: 100%;
   height: 100%;
   padding-bottom: 0.3rem;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   div:nth-child(1) {
     height: 3.1rem;
     width: 100%;
@@ -782,5 +1045,614 @@ export default {
 .kong3 {
   height: 0.2rem;
   width: 100%;
+}
+/* main_newgc  */
+.main_newgc {
+  width: 100%;
+}
+.main_newgc_list {
+  width: 6.9rem;
+  margin: 0 auto;
+}
+.newgc_list_box {
+  width: 100%;
+  height: 3rem;
+}
+.newgc_list_box a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.newgc_l {
+  width: 2rem;
+  height: 2.8rem;
+  float: left;
+  margin: 0.1rem 0;
+  position: relative;
+  line-height: 2.8rem;
+  text-align: center;
+  font-size: 0;
+}
+.newgc_l img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  margin-top: 0.6rem;
+}
+.newgc_l div {
+  width: 1.12rem;
+  height: 0.6rem;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0.45rem;
+  min-width: 1.12rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+  background: rgba(158, 16, 14, 0.8);
+  color: #fff;
+  padding: 0 0.14rem 0 0.04rem;
+  border-radius: 0 0.7rem 0.7rem 0;
+}
+.newgc_l div span:nth-child(1) {
+  font-size: 0.26rem;
+}
+.newgc_l div span:nth-child(2) {
+  font-size: 0.3rem;
+}
+.newgc_r {
+  width: 4.6rem;
+  height: 3rem;
+  float: right;
+  border-bottom: 1px solid #f3f3f3;
+}
+.newgc_r_1 {
+  width: 100%;
+  height: 0.42rem;
+  line-height: 0.42rem;
+  font-size: 0.3rem;
+  font-weight: 700;
+  color: #262626;
+  margin-top: 0.2rem;
+  overflow: hidden;
+}
+.newgc_r_2 {
+  width: 100%;
+  height: 0.72rem;
+  font-size: 0.24rem;
+  color: #999;
+  text-align: justify;
+  line-height: 0.36rem;
+  margin-top: 0.2rem;
+  overflow: hidden;
+}
+.newgc_r_3 {
+  margin-top: 0.4rem;
+  font-size: 0;
+  height: 0.44rem;
+  overflow: hidden;
+}
+.author {
+  color: #262626;
+}
+.newgc_r_3 span {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 0.44rem;
+  text-align: center;
+  line-height: 0.42rem;
+  padding: 0 0.16rem;
+  font-size: 0.24rem;
+  color: #997f55;
+  background-size: 100% 100%;
+  margin-right: 0.14rem;
+  border: 1px solid rgba(153, 127, 85, 0.6);
+  border-radius: 0.08rem;
+  margin-bottom: 0.1rem;
+}
+.newgc_r_desc {
+  color: #999;
+  text-align: justify;
+  width: 100%;
+  height: 0.72rem;
+  font-size: 0.24rem;
+  line-height: 0.36rem;
+  overflow: hidden;
+  margin-top: 0.2rem;
+}
+/* main over */
+.main_hyh {
+  height: 0.8rem;
+  width: 100%;
+  text-align: center;
+  line-height: 0.4rem;
+  padding-top: 0.4rem;
+  font-size: 0.26rem;
+  color: #365899;
+}
+.books_list1 {
+  width: 100%;
+  overflow: hidden;
+}
+.books_list_m {
+  width: 6.9rem;
+  margin: 0 auto;
+  overflow: unset;
+}
+.list_m_box {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+}
+.list_m_box_m {
+  flex-shrink: 0;
+  width: 2.1rem;
+  height: 3.52rem;
+  margin-right: 0.2rem;
+}
+.list_m_box_m .pic {
+  position: relative;
+  width: 2.1rem;
+  height: 2.1rem;
+  text-align: center;
+  line-height: 2.1rem;
+  border-radius: 0.08rem;
+  font-size: 0;
+  overflow: hidden;
+}
+.list_m_box_m .pic img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.list_m_box_m .title {
+  width: 2.1rem;
+  height: 0.8rem;
+  line-height: 0.4rem;
+  font-size: 0.26rem;
+  color: #262626;
+  overflow: hidden;
+  margin-top: 0.16rem;
+}
+.list_m_box_m .pri {
+  width: 100%;
+  height: 0.42rem;
+  line-height: 0.42rem;
+  color: #9e100e;
+  margin-top: 0.04rem;
+}
+.list_m_box_m .pri span:nth-of-type(1) {
+  font-size: 0.24rem;
+}
+.list_m_box_m .pri span:nth-of-type(2) {
+  font-size: 0.3rem;
+}
+.list_m_box_m .pri i {
+  font-size: 0.22rem;
+  color: #999;
+}
+.cj {
+  position: absolute;
+  left: 0.1rem;
+  bottom: 0.06rem;
+  height: 0.3rem;
+  line-height: 0.3rem;
+  font-size: 0.22rem;
+  color: #fff;
+}
+.art_item {
+  width: 1005;
+}
+.art_item_box {
+  width: 6.9rem;
+  margin: 0 auto;
+}
+.art_item_x {
+  display: inline-block;
+  height: 0.64rem;
+  line-height: 0.62rem;
+  border: 1px solid hsla(0, 0%, 78%, 0.6);
+  border-radius: 0.64rem;
+  font-size: 0.28rem;
+  color: #262626;
+  padding: 0 0.3rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+.recommend_list {
+  width: 100%;
+  background: linear-gradient(#fff, #f8f8f8 5.42rem, #f8f8f8);
+}
+.recommend_list ul {
+  width: 7.1rem;
+  margin: 0 auto;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.recommend_list ul li {
+  width: 3.46rem;
+  height: 5.42rem;
+  background: #fff;
+  border-radius: 0.08rem;
+  margin-bottom: 0.2rem;
+  overflow: hidden;
+}
+.recommend_list ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+.recommend_list ul li a .img_box {
+  width: 3.46rem;
+  height: 3.46rem;
+  text-align: center;
+  line-height: 3.46rem;
+  font-size: 0;
+}
+.recommend_list ul li a .img_box img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+.recommend_list ul li a .title {
+  width: 3.06rem;
+  height: 0.8rem;
+  line-height: 0.4rem;
+  font-size: 0.26rem;
+  overflow: hidden;
+  margin: 0.14rem auto 0;
+}
+.recommend_list ul li a .middle_box {
+  width: 3.06rem;
+  height: 0.36rem;
+  line-height: 0.36rem;
+  margin: 0.04rem auto 0;
+}
+.recommend_list ul li a .middle_box .phase {
+  float: left;
+  padding: 0 0.1rem;
+  height: 0.36rem;
+  font-size: 0.22rem;
+  color: #999;
+  background: #fafafa;
+  border-radius: 0.08rem;
+}
+.recommend_list ul li a .middle_box .address {
+  float: right;
+  font-size: 0.22rem;
+  color: #999;
+}
+.recommend_list ul li a .price {
+  width: 3.06rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  font-size: 0.28rem;
+  color: #9e100e;
+  margin: 0.06rem auto 0;
+}
+.recommend_list ul li a .price span:nth-of-type(1) {
+  font-size: 0.24rem;
+}
+.recommend_list ul li a .price span:nth-of-type(2) {
+  font-size: 0.3rem;
+} /* main_newgc  */
+.main_newgc {
+  width: 100%;
+}
+.main_newgc_list {
+  width: 6.9rem;
+  margin: 0 auto;
+}
+.newgc_list_box {
+  width: 100%;
+  height: 3rem;
+}
+.newgc_list_box a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.newgc_l {
+  width: 2rem;
+  height: 2.8rem;
+  float: left;
+  margin: 0.1rem 0;
+  position: relative;
+  line-height: 2.8rem;
+  text-align: center;
+  font-size: 0;
+}
+.newgc_l img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  margin-top: 0.6rem;
+}
+.newgc_l div {
+  width: 1.12rem;
+  height: 0.6rem;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0.45rem;
+  min-width: 1.12rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+  background: rgba(158, 16, 14, 0.8);
+  color: #fff;
+  padding: 0 0.14rem 0 0.04rem;
+  border-radius: 0 0.7rem 0.7rem 0;
+}
+.newgc_l div span:nth-child(1) {
+  font-size: 0.26rem;
+}
+.newgc_l div span:nth-child(2) {
+  font-size: 0.3rem;
+}
+.newgc_r {
+  width: 4.6rem;
+  height: 3rem;
+  float: right;
+  border-bottom: 1px solid #f3f3f3;
+}
+.newgc_r_1 {
+  width: 100%;
+  height: 0.42rem;
+  line-height: 0.42rem;
+  font-size: 0.3rem;
+  font-weight: 700;
+  color: #262626;
+  margin-top: 0.2rem;
+  overflow: hidden;
+}
+.newgc_r_2 {
+  width: 100%;
+  height: 0.72rem;
+  font-size: 0.24rem;
+  color: #999;
+  text-align: justify;
+  line-height: 0.36rem;
+  margin-top: 0.2rem;
+  overflow: hidden;
+}
+.newgc_r_3 {
+  margin-top: 0.4rem;
+  font-size: 0;
+  height: 0.44rem;
+  overflow: hidden;
+}
+.author {
+  color: #262626;
+}
+.newgc_r_3 span {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 0.44rem;
+  text-align: center;
+  line-height: 0.42rem;
+  padding: 0 0.16rem;
+  font-size: 0.24rem;
+  color: #997f55;
+  background-size: 100% 100%;
+  margin-right: 0.14rem;
+  border: 1px solid rgba(153, 127, 85, 0.6);
+  border-radius: 0.08rem;
+  margin-bottom: 0.1rem;
+}
+.newgc_r_desc {
+  color: #999;
+  text-align: justify;
+  width: 100%;
+  height: 0.72rem;
+  font-size: 0.24rem;
+  line-height: 0.36rem;
+  overflow: hidden;
+  margin-top: 0.2rem;
+}
+/* main over */
+.main_hyh {
+  height: 0.8rem;
+  width: 100%;
+  text-align: center;
+  line-height: 0.4rem;
+  padding-top: 0.4rem;
+  font-size: 0.26rem;
+  color: #365899;
+}
+.books_list1 {
+  width: 100%;
+  overflow: hidden;
+}
+.books_list_m {
+  width: 6.9rem;
+  margin: 0 auto;
+  overflow: unset;
+}
+.list_m_box {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+}
+.list_m_box_m {
+  flex-shrink: 0;
+  width: 2.1rem;
+  height: 3.52rem;
+  margin-right: 0.2rem;
+}
+.list_m_box_m .pic {
+  position: relative;
+  width: 2.1rem;
+  height: 2.1rem;
+  text-align: center;
+  line-height: 2.1rem;
+  border-radius: 0.08rem;
+  font-size: 0;
+  overflow: hidden;
+}
+.list_m_box_m .pic img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.list_m_box_m .title {
+  width: 2.1rem;
+  height: 0.8rem;
+  line-height: 0.4rem;
+  font-size: 0.26rem;
+  color: #262626;
+  overflow: hidden;
+  margin-top: 0.16rem;
+}
+.list_m_box_m .pri {
+  width: 100%;
+  height: 0.42rem;
+  line-height: 0.42rem;
+  color: #9e100e;
+  margin-top: 0.04rem;
+}
+.list_m_box_m .pri span:nth-of-type(1) {
+  font-size: 0.24rem;
+}
+.list_m_box_m .pri span:nth-of-type(2) {
+  font-size: 0.3rem;
+}
+.list_m_box_m .pri i {
+  font-size: 0.22rem;
+  color: #999;
+}
+.cj {
+  position: absolute;
+  left: 0.1rem;
+  bottom: 0.06rem;
+  height: 0.3rem;
+  line-height: 0.3rem;
+  font-size: 0.22rem;
+  color: #fff;
+}
+.art_item {
+  width: 1005;
+}
+.art_item_box {
+  width: 6.9rem;
+  margin: 0 auto;
+}
+.art_item_x {
+  display: inline-block;
+  height: 0.64rem;
+  line-height: 0.62rem;
+  border: 1px solid hsla(0, 0%, 78%, 0.6);
+  border-radius: 0.64rem;
+  font-size: 0.28rem;
+  color: #262626;
+  padding: 0 0.3rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+.recommend_list {
+  width: 100%;
+  background: linear-gradient(#fff, #f8f8f8 5.42rem, #f8f8f8);
+}
+.recommend_list ul {
+  width: 7.1rem;
+  margin: 0 auto;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.recommend_list ul li {
+  width: 3.46rem;
+  height: 5.42rem;
+  background: #fff;
+  border-radius: 0.08rem;
+  margin-bottom: 0.2rem;
+  overflow: hidden;
+}
+.recommend_list ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+.recommend_list ul li a .img_box {
+  width: 3.46rem;
+  height: 3.46rem;
+  text-align: center;
+  line-height: 3.46rem;
+  font-size: 0;
+}
+.recommend_list ul li a .img_box img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+.recommend_list ul li a .title {
+  width: 3.06rem;
+  height: 0.8rem;
+  line-height: 0.4rem;
+  font-size: 0.26rem;
+  overflow: hidden;
+  margin: 0.14rem auto 0;
+}
+.recommend_list ul li a .middle_box {
+  width: 3.06rem;
+  height: 0.36rem;
+  line-height: 0.36rem;
+  margin: 0.04rem auto 0;
+}
+.recommend_list ul li a .middle_box .phase {
+  float: left;
+  padding: 0 0.1rem;
+  height: 0.36rem;
+  font-size: 0.22rem;
+  color: #999;
+  background: #fafafa;
+  border-radius: 0.08rem;
+}
+.recommend_list ul li a .middle_box .address {
+  float: right;
+  font-size: 0.22rem;
+  color: #999;
+}
+.recommend_list ul li a .price {
+  width: 3.06rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  font-size: 0.28rem;
+  color: #9e100e;
+  margin: 0.06rem auto 0;
+}
+.recommend_list ul li a .price span:nth-of-type(1) {
+  font-size: 0.24rem;
+}
+.recommend_list ul li a .price span:nth-of-type(2) {
+  font-size: 0.3rem;
+}
+.inner {
+  text-align: center;
+  line-height: 0.3rem;
+  padding: 0.4rem 0;
+  font-size: 0.26rem;
+  color: #c2c2c2;
+  background: #f8f8f8;
 }
 </style>
