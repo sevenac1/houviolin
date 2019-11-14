@@ -5,6 +5,7 @@
     <div class="min">   
     <div class="booklist"    v-for="(item,index) in totalList" :key="Number(item.id)">
         <div id="title-two">
+          
             <div>
                     <span class="bond">{{item.name}}</span>
                     <span class="num">{{item.num}}</span>
@@ -197,6 +198,10 @@ export default {
             let data=await auctionApi(catPage);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            console.log(data);
+>>>>>>> master
             console.log(data.data.list);
             this.totalList==data.data.list?data.data.list:'';
            this.totalList=[...this.totalList,...data.data.list];
@@ -204,23 +209,23 @@ export default {
             // sessionStorage.setItem("gzmr",JSON.stringify(data.data.list))
         }
     },
-    // created(){
-    //      this.handleauctionApi(1); 
-    // },
-    //  mounted(){
-    //           this.$refs.scroll.handlepullingUp(()=>{
-    //               console.log(111);
-    //                 if(this.i<6){
-    //                      this.handleauctionApi(this.i++);
-    //                 }
-    //             })
-    //     },
-    //       watch:{
-    //         totalList(){
-    //         this.$refs.scroll.handlefinishPullUp(); 
-    //  },
+    created(){
+         this.handleauctionApi(1); 
+    },
+     mounted(){
+              this.$refs.scroll.handlepullingUp(()=>{
+                  console.log(111);
+                    if(this.i<6){
+                         this.handleauctionApi(this.i++);
+                    }
+                })
+        },
+          watch:{
+            totalList(){
+            this.$refs.scroll.handlefinishPullUp(); 
+     },
    
-    // }   
+     }   
 
 =======
 =======
@@ -266,6 +271,7 @@ export default {
 <<<<<<< HEAD
     min-height: 1500px;
     background: #fff;
+    padding-bottom:1rem;
 }
 
 =======

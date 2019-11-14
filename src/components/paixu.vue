@@ -3,7 +3,7 @@
     <Better ref="scroll" class="in">
         <div id="list">
                         <ul class="list-item">
-                                <li class="item" v-for="item in itemList" >
+                                <router-link  class="item" v-for="item in itemList"  tag="li" to="/home">
                         
                                         <div class="box-img">
                                                 <img :src="item.bigImg" alt="">
@@ -24,7 +24,7 @@
                                                 </p>
                                         </div>
                                
-                                </li>
+                                </router-link>>
                         </ul>
               <div>{{value}}</div>
         </div>  
