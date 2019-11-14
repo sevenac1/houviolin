@@ -120,9 +120,9 @@
                 <a href=""></a>
             </a>
         </div>
-        <keep-alive>
+      
              <Paimai />
-        </keep-alive>
+     
        
         <!--  -->
        </div>
