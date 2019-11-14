@@ -6,15 +6,10 @@ const server=axios.create({
 })
 server.interceptors.request.use((config)=>{
     if(config.method=="GET"){
- 
         config.params={...config.dadta};
     }
-    if(config.method=="POST"){
-        console.log(123)
-        config.data={...config.dadta};
-    }
-   
-    return  config;
+    return config;
+    // config.headers["content-type"]="applicetion/json";  
     // config.headers["content-type"]="application/json";
     // config.headers["token"]=""
 },(err)=>{

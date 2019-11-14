@@ -23,16 +23,94 @@ const router=new VueRouter({
             component:_=>import("@page/login"),
             name:"login",
             meta:{
-                title:123
+                flag:false,
             }
         },
+        {
+            path:"/register",
+            component:_=>import("@page/register"),
+            name:"register",
+            meta:{
+                flag:false,
+            }
+        },
+        {
+            path:"/list",
+            component:_=>import("@page/list"),
+            name:"list",
+            meta:{
+                flag:false,
+            }
+        },
+        {
+            path:"/sousuo",
+            component:_=>import("@page/sousuo"),
+            name:"sousuo",
+            meta:{
+                flag:false,
+            }
+        },
+        {
+            path:"/artwork",
+            component:_=>import("@page/artwork"),
+            name:"artwork",
+            meta:{
+                flag:false,
+            }
+        },
+        {
+            path:"/booklist",
+            component:_=>import("@page/booklist"),
+            name:"booklist",
+            meta:{
+                flag:false,
+            }
+        },
+        {
+            path:"/newbooks",
+            component:_=>import("@page/newbooks"),
+            name:"newbooks",
+            meta:{
+                flag:false,
+            }
+        },
+        {
+            path:"/china",
+            component:_=>import("@page/china"),
+            name:"china",
+            meta:{
+                flag:false,
+            }
+        },
+        {
+            path:"/classification",
+            component:_=>import("@page/classification"),
+            name:"classification",
+            meta:{
+                flag:false,
+            }
+        },
+        {
+            path:"/xianzhuang",
+            component:_=>import("@page/xian"),
+            name:"xian"
+        },
+        
+    ],
     
    
-    {
-        path:"/xianzhuang",
-        component:_=>import("@page/xian"),
-        name:"xian"
-    },]
     
+})
+
+router.beforeEach((to,from,next)=>{
+    if(to.path !="/login" && to.meta.requiredAuth){
+        if(localStorage.getItem("token")){
+            next()
+        }else{
+            next({name:"login",params:{to:to.path}})
+        }
+    }else{
+        next();
+    }
 })
 export default router;

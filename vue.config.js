@@ -2,6 +2,14 @@ const path=require("path");
 module.exports={
     devServer:{
         proxy:{
+            "/operation":{
+                target:"https://m.kongfz.com",
+                changeOrigin:true
+            },
+            "/book":{
+                target:"https://m.kongfz.com",
+                changeOrigin:true
+            },
             "/home":{
                 target:"http://m.kongfz.cn/mobile",
                 changeOrigin:true
@@ -33,3 +41,5 @@ module.exports={
     }
 
 }
+
+
