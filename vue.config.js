@@ -10,6 +10,16 @@ module.exports={
                 target:"https://m.kongfz.com",
                 changeOrigin:true
             },
+            "/home":{
+                target:"http://m.kongfz.cn/mobile",
+                changeOrigin:true
+            },
+            "/list":{
+                target:"http://m.kongfz.cn/mobile",
+                changeOrigin:true
+            }
+          
+        
         }
     },
     //别名配置

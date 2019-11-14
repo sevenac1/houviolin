@@ -5,13 +5,13 @@ import books from "./books"
 import auction from "./auction"
 import cart from "./cart"
 import mine from "./mine"
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 const router=new VueRouter({
     mode:"hash",
     routes:[
         {
             path:"/",
-            redirect:"/home"
+            redirect:"/auction"
         },
         home,
         books,
@@ -90,8 +90,16 @@ const router=new VueRouter({
                 flag:false,
             }
         },
+        {
+            path:"/xianzhuang",
+            component:_=>import("@page/xian"),
+            name:"xian"
+        },
         
-    ]
+    ],
+    
+   
+    
 })
 
 router.beforeEach((to,from,next)=>{

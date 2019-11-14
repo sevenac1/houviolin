@@ -6,6 +6,8 @@ import { Lazyload } from 'vant';
 
 Vue.use(Lazyload);
 Vue.use(VueTouch,{name:"v-touch"});
+import "@common/components"
+Vue.use(VueTouch,{name:"v-touch"})
 new Vue({
   router,
   VueTouch,
