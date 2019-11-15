@@ -11,7 +11,7 @@ const router=new VueRouter({
     routes:[
         {
             path:"/",
-            redirect:"/auction"
+            redirect:"/home"
         },
         home,
         books,
@@ -91,9 +91,17 @@ const router=new VueRouter({
             }
         },
         {
+            path:"/details",
+            component:_=>import("@page/details"),
+            name:"details",
+        },
+        {
             path:"/xianzhuang",
             component:_=>import("@page/xian"),
-            name:"xian"
+            name:"xian",
+            meta:{
+                flag:false,
+            }
         },
         
     ],

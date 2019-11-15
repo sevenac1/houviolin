@@ -8,7 +8,7 @@
       <!-- <span class="iconfont icon-sousuo"></span> -->
       <span class="iconfont icon-shenglvehao"></span>
     </div>
-    <van-tree-select height="100%" :items="items" :main-active-index.sync="activeIndex">
+    <!-- <van-tree-select height="100%" :items="items" :main-active-index.sync="activeIndex">
       <template slot="content">
         <div v-if="activeIndex === 0|1|2|3">
           <h3 class="title">特色</h3>
@@ -121,40 +121,54 @@
           </div>
         </div>
       </template>
-    </van-tree-select>
+    </van-tree-select> -->
+    <van-index-bar :index-list="indexList">
+      <van-index-anchor index="1">标题1</van-index-anchor>
+      <van-cell title="文本" />
+      <van-cell title="文本" />
+      <van-cell title="文本" />
+
+      <van-index-anchor index="2">标题2</van-index-anchor>
+      <van-cell title="文本" />
+      <van-cell title="文本" />
+      <van-cell title="文本" />...
+    </van-index-bar>
   </div>
 </template>
 <script>
-import { TreeSelect } from "vant";
-import { allApi} from "@api/classification"
+import { TreeSelect, IndexBar, IndexAnchor,Cell } from "vant";
+import { allApi } from "@api/classification";
 export default {
   name: "ClassiFication",
   components: {
-    [TreeSelect.name]: TreeSelect
+    [TreeSelect.name]: TreeSelect,
+    [IndexBar.name]: IndexBar,
+    [IndexAnchor.name]: IndexAnchor,
+    [Cell.name]: Cell,
   },
   data() {
     return {
       activeIndex: 0,
-      items: [
-        { text: "特色" },
-        { text: "图书" },
-        { text: "艺术收藏" },
-        { text: "文创周边" }
+      list: [],
+      indexList: [
+        
       ]
     };
   },
   created() {
     var wap;
     var msearch;
-    this.handleallApi(wap,msearch);
+    this.handleallApi(wap, msearch);
   },
   methods: {
     taggleBack() {
       this.$router.back();
     },
-    async handleallApi(wap,msearch){
-      let data = await allApi(wap,msearch);
-      console.log(data);
+    async handleallApi(wap, msearch) {
+      let data = await allApi(wap, msearch);
+      var info = data.data;
+      this.list = info;
+      console.log(this.list);
     }
   }
 };
@@ -165,7 +179,8 @@ export default {
   height: 100%;
 }
 .header {
-  position: relative;
+  position: fixed;
+  background: #fff;
   width: 100%;
   text-align: center;
   height: 0.88rem;
@@ -203,19 +218,21 @@ export default {
 }
 .van-tree-select {
   height: 100%;
+  padding-top: 0.88rem;
+  overflow: auto;
 }
 .van-sidebar.van-tree-select__nav {
-  height:20rem;
+  height: 20rem;
   height: 100%;
-  width:1.9rem;
+  width: 1.9rem;
 }
-.van-sidebar-item.van-sidebar-item--select.van-tree-select__nav-item{
-    width:1.9rem;
+.van-sidebar-item.van-sidebar-item--select.van-tree-select__nav-item {
+  width: 1.9rem;
 }
-.van-tree-select__nav{
-    flex: 0.68;
-    -webkit-box-flex: 0.68;
-    -webkit-flex:0.68;
+.van-tree-select__nav {
+  flex: 0.68;
+  -webkit-box-flex: 0.68;
+  -webkit-flex: 0.68;
 }
 .title {
   font-family: PingFangSC-Regular;
@@ -268,8 +285,18 @@ export default {
   letter-spacing: 0;
 }
 
-.van-tree-select__content{
-  overflow:visible;
-  height:100%;
+.van-tree-select__content {
+  overflow: visible;
+  height: 100%;
+}
+.van-index-bar__sidebar {
+  left: 0;
+  right: 100%;
+}
+.van-cell{
+width:80%;
+position:absolute;
+top:20%;
+right:0;
 }
 </style>
