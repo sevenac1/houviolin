@@ -72,15 +72,16 @@ export default {
     },
      mounted(){
               this.$refs.scroll.handlepullingUp(()=>{
-                  console.log(111);
-                    if(this.i<6){
+                 if(this.i<6){
                          this.handleauctionApi(this.i++);
                     }
+                  
                 })
         },
           watch:{
             totalList(){
             this.$refs.scroll.handlefinishPullUp(); 
+             
      },
    
      }     
@@ -89,13 +90,14 @@ export default {
 </script>
 <style lang="scss">
 .in{
-    height: 1400px;
+   height: 1400px;
 }
 .min{
-    min-height: 30rem;
+  
     background: #fff;
     padding-bottom:1rem;
     padding-top:1rem;
+    min-height: 1401px;
 }
 
 #title-two{

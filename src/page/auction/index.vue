@@ -1,36 +1,4 @@
 <template>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-       <div class="t">
-                <div id="head">
-                        <div class="head-left">
-                            <a href=""><img :src="head.headimg" alt=""></a>
-                        </div>
-                        <a href="">
-                            <div class="head-center-img">
-                            <img :src="head.headimg2" alt="">
-                            <div>{{head.headtitle}}</div>
-                            </div>
-                        </a>
-                        <div class="head-right">
-                            <a href="" class="head-r-two">
-                                <div>
-                                    <i class="mes">0</i>
-                                </div>
-                                <img :src="head.headimg3" alt="">
-                            </a>
-                        </div>
-                 </div>
-
-                 <!-- banner -->
-        <div id="banner">
-            <div class="banner-container">
-                <img src="https://img0.kfzimg.com/operation/4a/d8/4ad8e82aa849f5fadd3ffd446ff93c35.png" alt="">
-            </div>
-        </div>
-
-=======
    <div>
                 <div id="head">
                         <div class="head-left">
@@ -59,37 +27,6 @@
             </div>
         </div>
 
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
-   <div>
-                <div id="head">
-                        <div class="head-left">
-                            <a href=""><img :src="head.headimg" alt=""></a>
-                        </div>
-                        <a href="">
-                            <div class="head-center-img">
-                            <img :src="head.headimg2" alt="">
-                            <div>{{head.headtitle}}</div>
-                            </div>
-                        </a>
-                        <div class="head-right">
-                            <a href="" class="head-r-two">
-                                <div>
-                                    <i class="mes">0</i>
-                                </div>
-                                <img :src="head.headimg3" alt="">
-                            </a>
-                        </div>
-                 </div>
-
-                 <!-- banner -->
-        <div id="banner">
-            <div class="banner-container">
-                <img src="https://img0.kfzimg.com/operation/4a/d8/4ad8e82aa849f5fadd3ffd446ff93c35.png" alt="">
-            </div>
-        </div>
-
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         <!-- 列表 -->
         <div id="nav-box">
             <ul class="nav-container">
@@ -141,11 +78,6 @@
                 </a>
             </div>
         </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
     </div>
     <!--  -->
         <div id="title-box">
@@ -187,77 +119,14 @@
                 <a href=""></a>
             </a>
         </div>
-<<<<<<< HEAD
-=======
         <Paimai />
         <!--  -->
        
-<<<<<<< HEAD
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
     </div>
-    <!--  -->
-        <div id="title-box">
-            <a href="" class="title-container">
-                <div class="title-left"></div>
-                <span>推荐专场</span>
-                <div class="title-right"></div>
-                <a href=""></a>
-            </a>
-        </div>
-
-
-        <!--  -->
-            <div id="swiper">
-                <div class="swiper-list">
-                        <div class="sli-item" v-for="(item,index) in yuijian" :key="index">
-                            <a href="">
-                                <div class="list-top">
-                                    <img class="list-t-one" :src="item.img2" alt="">
-                                    <img class="list-t-two" :src="item.img1" alt="">
-                                    <span class="list-text">{{item.jian}}</span>
-                                </div>
-                                <div class="list-center">{{item.title}}</div>
-                                <div class="list-bottom">
-                                    <div class="list-time">{{item.time}}</div>
-                                    <div class="list-to">{{item.dianpu}} </div>
-                                </div>
-                            </a>
-                        </div>
-                </div>
-            </div>
-
-            <!--  -->
-        <div id="title-box">
-            <a href="" class="title-container">
-                <div class="title-left"></div>
-                <span>今日热点</span>
-                <div class="title-right"></div>
-                <a href=""></a>
-            </a>
-        </div>
->>>>>>> jingjing
-      
-             <Paimai />
-     
-       
-        <!--  -->
-       </div>
-    
-   
 </template>
 <script>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-import  {auctionApi} from "@api/auction"
-=======
 
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
-
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 import Better from "@common/components/bscroll"
 import Paimai from "@components/pai"
 export default {
@@ -268,15 +137,7 @@ export default {
     },
     data(){
        return {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          totalList:[],
-=======
           
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
-          
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
            head:{
                headimg:"data:image/png;base64,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"
                 ,headtitle:"拍品名称 拍主昵称",
@@ -395,35 +256,10 @@ export default {
 
        }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //   methods:{
-    //     async handleauctionApi(catPage){
-    //         let data=await auctionApi(catPage);
-    //         console.log(data.data.list);
-    //         this.totalList==data.data.list?data.data.list:'';
-    //        this.totalList=[...this.totalList,...data.data.list];
-    //         // sessionStorage.setItem("gzmr",JSON.stringify(data.data.list))
-    //     },
-    
-  
-
-      
-}
-</script>
-<style lang="scss" >
-
-=======
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
    
 }
 </script>
 <style lang="scss" >
-<<<<<<< HEAD
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 .books-{
         height: 1.96rem;
         width: 100%;

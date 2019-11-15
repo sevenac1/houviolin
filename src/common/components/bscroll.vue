@@ -11,13 +11,6 @@
 
 
 <script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-import  {auctionApi} from "@api/auction"
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 import BScroll from "better-scroll";
 export default {
   name: "Better",
@@ -47,20 +40,6 @@ export default {
     handleScroll(){
         this.scroll.on("scroll",this.handleScrollCb)
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // handleScrollCb({y}){
-    //   if(y>=500){
-    //        console.log(y);
-    //     }
-    // },
-    //下拉刷新
-    handlepullingDown(callback) {
-      this.scroll.on("pullingDown", () => {
-        console.log(333);
-=======
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
     handleScrollCb({y}){
       if(y>=30){
             this.loadingFlag = true;
@@ -69,10 +48,6 @@ export default {
     //下拉刷新
     handlepullingDown(callback) {
       this.scroll.on("pullingDown", () => {
-<<<<<<< HEAD
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         callback();
       });
     },
@@ -106,16 +81,7 @@ export default {
 .wrapper,
 .scroll_container {
   height: 100%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  background: #fff;
-  
-=======
   overflow: hidden;
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
-  overflow: hidden;
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 }
 .scroll_loading {
   display: flex;
