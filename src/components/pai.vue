@@ -1,4 +1,5 @@
 <template>
+<div class="ption">
 <Better ref="scroll" class="in">
     <div class="min">   
     <div class="booklist"    v-for="(item,index) in totalList" :key="Number(item.id)">
@@ -44,7 +45,7 @@
    
     </div>
   </Better> 
-
+</div>
 </template>
 <script>
 import  {auctionApi} from "@api/auction"
@@ -64,7 +65,7 @@ export default {
             this.totalList==data.data.list?data.data.list:'';
            this.totalList=[...this.totalList,...data.data.list];
            console.log(this.totalList);
-            // sessionStorage.setItem("gzmr",JSON.stringify(data.data.list))
+             sessionStorage.setItem("gzmr",JSON.stringify(data.data.list))
         }
     },
     created(){
@@ -89,15 +90,15 @@ export default {
 }
 </script>
 <style lang="scss">
-.in{
-   height: 1400px;
+.ption{
+    position: absolute;
+    top:0rem;
+    left: 0rem;
 }
 .min{
-  
     background: #fff;
     padding-bottom:1rem;
-    padding-top:1rem;
-    min-height: 1401px;
+    min-height: 1110px;
 }
 
 #title-two{

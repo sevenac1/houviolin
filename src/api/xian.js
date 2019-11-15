@@ -1,11 +1,12 @@
 import http from "@utils/require"
-export const xianApi=(pageShow,page)=>http({
+export const xianApi=(pageShow,page,order)=>http({
     methods:"POST",
     url:"/list/getList",
     params:{
 
 pageShow:pageShow ,
-page: page
+page: page,
+order:order,
     }
 
 })
