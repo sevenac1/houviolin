@@ -21,7 +21,7 @@
     </div>
     <!-- <div id="main_pic" class="main_pic"> -->
       <!-- <router-link to="/china" tag="a" v-for="(item,index) in img" :key="index">
-        <img :src="item" />
+        <img v-lazy="item" />
       </router-link> -->
       <van-swipe :autoplay="3000">
         <van-swipe-item v-for="(image, index) in images" :key="index">
@@ -34,7 +34,7 @@
       <div class="nav_box" v-for="(item,index) in navlist" :key="index">
         <div>
           <router-link to="/classification" tag="a">
-            <img :src="item.img" alt />
+            <img v-lazy="item.img" alt />
           </router-link>
         </div>
         <div>{{item.title}}</div>
@@ -47,7 +47,7 @@
           <p>{{item.subTitle}}</p>
         </div>
         <div>
-          <img :src="item.imgUrl" alt />
+          <img v-lazy="item.imgUrl" alt />
         </div>
       </div>
     </div>
@@ -59,7 +59,7 @@
             <p>{{item.subTitle}}</p>
           </div>
           <div>
-            <img :src="item.imgUrl" alt />
+            <img v-lazy="item.imgUrl" alt />
           </div>
         </router-link>
       </div>
@@ -74,7 +74,7 @@
           <p>{{allList.subTitle}}</p>
         </div>
         <div>
-          <img :src="allList.imgUrl" alt />
+          <img v-lazy="allList.imgUrl" alt />
         </div>
       </div>
       <div class="inner_box2">
@@ -85,7 +85,7 @@
               <p>{{artList.subTitle}}</p>
             </div>
             <div>
-              <img :src="artList.imgUrl" alt />
+              <img v-lazy="artList.imgUrl" alt />
             </div>
           </router-link>
         </div>
@@ -95,7 +95,7 @@
             <p>{{djList.subTitle}}</p>
           </div>
           <div>
-            <img :src="djList.imgUrl" alt />
+            <img v-lazy="djList.imgUrl" alt />
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@
           <p>{{item.subTitle}}</p>
         </div>
         <div>
-          <img :src="item.imgUrl" alt />
+          <img v-lazy="item.imgUrl" alt />
         </div>
       </div>
     </div>
@@ -118,7 +118,7 @@
           <p>{{item.subTitle}}</p>
         </div>
         <div>
-          <img :src="item.imgUrl" alt />
+          <img v-lazy="item.imgUrl" alt />
         </div>
       </div>
     </div>
@@ -131,9 +131,10 @@
     <div class="main_model">
       <div class="model_box">
         <div class="swiper">
-          <div class="swiper_box" v-for="(item,index) in booksList" :key="index">
+          <router-link tag="div" :to="{name:'details',query:{author:item.author,content:item.contentIntroduction,img:item.imgUrl,isbn:item.isbn,name:item.itemName,mid:item.mid,press:item.press,price:item.price,pudate:item.pubDate}}" class="swiper_box" v-for="(item,index) in booksList" :key="index">
+     
             <div class="img_box">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
             </div>
             <div class="swiper_title">{{item.itemName}}</div>
             <div class="swiper_author">{{item.author}}</div>
@@ -142,7 +143,7 @@
               <span>{{item.price}}</span>
               <span>起</span>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -158,7 +159,7 @@
           <div class="tj_list_main_box" v-for="(item,index) in booksList2" :key="index">
             <router-link to="/china" tag="a" class="tj_list_main_box_link">
               <div>
-                <img :src="item.imgUrl" alt />
+                <img v-lazy="item.imgUrl" alt />
               </div>
               <div class="kong3"></div>
               <div>{{item.description}}</div>
@@ -178,7 +179,7 @@
         <li class="newgc_list_box" v-for="(item,index) in newbookgc" :key="index">
           <a href>
             <div class="newgc_l">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
               <div class="newgc_pri">
                 <span>￥</span>
                 <span>{{item.price}}</span>
@@ -206,7 +207,7 @@
         <li class="newgc_list_box" v-for="(item,index) in oldbook" :key="index">
           <a href>
             <div class="newgc_l">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
               <div class="newgc_pri">
                 <span>￥</span>
                 <span>{{item.price}}</span>
@@ -235,7 +236,7 @@
         <li class="newgc_list_box" v-for="(item,index) in newbookcb" :key="index">
           <a href>
             <div class="newgc_l">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
               <div class="newgc_pri">
                 <span>￥</span>
                 <span>{{item.price}}</span>
@@ -264,7 +265,7 @@
         <li class="newgc_list_box" v-for="(item,index) in newbookphb" :key="index">
           <a href>
             <div class="newgc_l">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
               <div class="newgc_pri">
                 <span>￥</span>
                 <span>{{item.price}}</span>
@@ -293,7 +294,7 @@
         <ul class="list_m_box">
           <li class="list_m_box_m" v-for="(item,index) in jjxzList" :key="index">
             <div class="pic">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
             </div>
             <div class="title">{{item.itemName}}</div>
             <div class="pri">
@@ -315,7 +316,7 @@
         <ul class="list_m_box">
           <li class="list_m_box_m" v-for="(item,index) in ywjlList" :key="index">
             <div class="pic">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
             </div>
             <div class="title">{{item.itemName}}</div>
             <div class="pri">
@@ -337,7 +338,7 @@
         <ul class="list_m_box">
           <li class="list_m_box_m" v-for="(item,index) in gjjlList" :key="index">
             <div class="pic">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
             </div>
             <div class="title">{{item.itemName}}</div>
             <div class="pri">
@@ -359,7 +360,7 @@
         <ul class="list_m_box">
           <li class="list_m_box_m" v-for="(item,index) in mgjsList" :key="index">
             <div class="pic">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
             </div>
             <div class="title">【新文学珍本】 抗战小说 硬精装本《三百八十个》 上海良友图书公司1935年初版 鲛人（项德言）著！,</div>
             <div class="pri">
@@ -387,7 +388,7 @@
         <ul class="list_m_box">
           <li class="list_m_box_m" v-for="(item,index) in mgtsList" :key="index">
             <div class="pic">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
               <div class="cj">{{item.bidNum}}次出价</div>
             </div>
             <div class="title">{{item.itemName}}</div>
@@ -411,7 +412,7 @@
         <ul class="list_m_box">
           <li class="list_m_box_m" v-for="(item,index) in mgqkList" :key="index">
             <div class="pic">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
               <div class="cj">{{item.bidNum}}出价</div>
             </div>
             <div class="title">{{item.itemName}}</div>
@@ -446,7 +447,7 @@
         <ul class="list_m_box">
           <li class="list_m_box_m" v-for="(item,index) in ysppmList" :key="index">
             <div class="pic">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
               <div class="cj">{{item.bidNum}}次出价</div>
             </div>
             <div class="title">{{item.itemName}}</div>
@@ -470,7 +471,7 @@
         <li v-for="(item,index) in wntjList" :key="index">
           <a href>
             <div class="img_box">
-              <img :src="item.imgMiddle" alt />
+              <img v-lazy="item.imgMiddle" alt />
             </div>
             <div class="title">{{item.itemName}}</div>
             <div class="middle_box clearfix">
@@ -564,14 +565,30 @@ export default {
   created() {
     this.handlehomeApi1(1);
     this.handlehomeApi2(2);
-    this.handlehomeApi3(3);
-    this.handlehomeApi4(4);
-    this.handlehomeApi5(5);
-    this.handlehomeApi6(6);
-    this.handlehomeApi7(7);
-    this.handlehomeApi8(16);
-    this.handlehomeApi9(1);
-    this.handlehomeApi10(8);
+    this.$store.dispatch("home/handlehomeApi3",3);
+    this.$store.dispatch("home/handlehomeApi4",4);
+    this.$store.dispatch("home/handlehomeApi5",5);
+    this.$store.dispatch("home/handlehomeApi6",6);
+    this.$store.dispatch("home/handlehomeApi7",7);
+    this.$store.dispatch("home/handlehomeApi8",16);
+  },
+  activated() {
+    this.booksList = JSON.parse(sessionStorage.getItem("booksList"));
+    this.booksList2 = JSON.parse(sessionStorage.getItem("booksList2"));
+    this.newbookgc = JSON.parse(sessionStorage.getItem("newbookgc"));
+    this.oldbook=JSON.parse(sessionStorage.getItem("oldbook"));
+    this.newbookcb=JSON.parse(sessionStorage.getItem("newbookcb"));
+    this.newbookphb=JSON.parse(sessionStorage.getItem("newbookphb"));
+    this.jjxzList=JSON.parse(sessionStorage.getItem("jjxzList"));
+    this.ywjlList=JSON.parse(sessionStorage.getItem("ywjlList"));
+    this.gjjlList=JSON.parse(sessionStorage.getItem("gjjlList"));
+    this.mgjsList=JSON.parse(sessionStorage.getItem("mgjsList"));
+    this.mgtsList=JSON.parse(sessionStorage.getItem("mgtsList"));
+    this.mgqkList=JSON.parse(sessionStorage.getItem("mgqkList"));
+    this.ysppmList=JSON.parse(sessionStorage.getItem("ysppmList"));
+    this.bqList=JSON.parse(sessionStorage.getItem("bqList"));
+    this.wntjList=JSON.parse(sessionStorage.getItem("wntjList"));
+    // console.log(this.newbookgc);
   },
   methods: {
     async handlehomeApi1(currPage) {
@@ -587,56 +604,7 @@ export default {
       this.zhenList = data.result.list[0].data;
       this.bagList = data.result.list[1].data;
     },
-    async handlehomeApi3(currPage) {
-      let data = await homeApi(currPage);
-      this.booksList = data.result.list[0].data[0].data;
-      this.booksList2 = data.result.list[1].data;
-      this.newbookgc = data.result.list[2].data[0].data;
-    },
-    async handlehomeApi4(currPage) {
-      let data = await homeApi(currPage);
-      this.oldbook = data.result.list[0].data[0].data;
-      this.newbookcb = data.result.list[1].data[0].data;
-      this.newbookphb = data.result.list[2].data[0].data;
-      // console.log(this.newbookphb);
-    },
-    async handlehomeApi5(currPage) {
-      let data = await homeApi(currPage);
-      this.jjxzList = data.result.list[0].data[0].data;
-      this.ywjlList = data.result.list[1].data[0].data;
-      this.gjjlList = data.result.list[2].data[0].data;
-      // console.log(this.jjxzList);
-    },
-    async handlehomeApi6(currPage) {
-      let data = await homeApi(currPage);
-      this.mgjsList = data.result.list[0].data[0].data;
-      this.mgtsList = data.result.list[2].data[0].data;
-      // console.log(this.mgjsList,this.mgtsList);
-    },
-    async handlehomeApi7(currPage) {
-      let data = await homeApi(currPage);
-      this.mgqkList = data.result.list[0].data[0].data;
-      this.ysppmList = data.result.list[1].data[0].data;
-      this.bqList = data.result.list[1].bqList;
-      // console.log(this.bqList);
-      // console.log(this.mgqkList,this.ysppmList);
-    },
-    async handlehomeApi8(place) {
-      let data = await homebookApi(place);
-      this.wntjList = data.data;
-
-      // console.log(this.wntjList);
-    },
-    async handlehomeApi9(place) {
-      let data = await homebookApi(place);
-      // console.log(data);
-
-      // console.log(this.wntjList);
-    },
-    async handlehomeApi10(currPage) {
-      let data = await homeApi(currPage);
-      // console.log(data);
-    }
+    
   }
 };
 </script>

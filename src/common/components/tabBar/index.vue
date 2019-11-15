@@ -16,6 +16,7 @@
   </div>
 </template>
 <script>
+import {mapState} from "vuex";
 export default {
   name: "Footer",
   data() {
@@ -55,12 +56,16 @@ export default {
       ]
     };
   },
+  created() {
+    this.activeIndex=JSON.parse(sessionStorage.getItem("tabIndex"));
+  },
   methods:{
       handleToggle(index){
-          this.activeIndex = index;
-          console.log(index,this.activeIndex);
+          // this.activeIndex = index;
+          this.$store.dispatch("tabBar/handletabIndex",index);
+          this.activeIndex=JSON.parse(sessionStorage.getItem("tabIndex"));
       }
-  }
+  },
 };
 </script>
 <style lang="scss">
