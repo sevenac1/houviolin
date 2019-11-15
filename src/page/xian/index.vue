@@ -1,24 +1,14 @@
 <template>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
     <div>
          <div id="hea">
                 <v-touch tag="div" class="back" @tap="handleback()"> 
                         <span class="iconfont icon-fanhui"></span>
                 </v-touch>
-=======
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
     <div>
          <div id="hea">
                 <a href="" class="back">
                         <span class="iconfont icon-fanhui"></span>
                 </a>
-<<<<<<< HEAD
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
                 <div class="paimai">全部拍卖</div>
                 <div class="srearch">
                         <span class="iconfont icon-chaxun"></span>
@@ -29,24 +19,15 @@
         </div>
         <div >
                 <div id="nav">
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <van-dropdown-menu active-color="#ee0a24">
                         <div class="ttt">
                                   <van-dropdown-item v-model="value1" :options="option1" />
                         </div>
                   
-=======
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
                 <div  class="dw">                 
                 </div>  
                     <van-dropdown-menu active-color="#ee0a24">
                     <van-dropdown-item v-model="value1" :options="option1" />
-<<<<<<< HEAD
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
                     <van-dropdown-item v-model="value2" :options="option2" />
                     </van-dropdown-menu>
                 <div>
@@ -55,33 +36,11 @@
         </div>
                
         </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
      
     <Salesvolume :value="value1"/>
       
     </div>
-
-</template>
-<script>
-import Salesvolume from "@components/paixu"
-import Vue from 'vue';
-import { DropdownMenu, DropdownItem } from 'vant';
-Vue.use(DropdownMenu).use(DropdownItem);
-
-export default {
-    name:"xian",
-    components:{
-        Salesvolume
-    },
-    data(){
-        return {
-            value1: 0,
-            value2: 'a',
-=======
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-        <div id="list">
+<div id="list">
                         <ul class="list-item">
                                 <li class="item" v-for="item in itemList" :key="item.itemId">
                         
@@ -111,24 +70,28 @@ export default {
 
       
     </div>
+
 </template>
 <script>
+import Salesvolume from "@components/paixu"
 import Vue from 'vue';
 import { DropdownMenu, DropdownItem } from 'vant';
-Vue.use(DropdownMenu).use(DropdownItem);
+import Vue from 'vue';
+import { DropdownMenu, DropdownItem } from 'vant';
 import {xianApi} from "@api/xian"
+Vue.use(DropdownMenu).use(DropdownItem);
+
 export default {
     name:"xian",
-    data(){
+    components:{
+        Salesvolume
+    },
+     data(){
         return {
             itemList:[],
               value1: 0,
              value2: 'a',
-<<<<<<< HEAD
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-      option1: [
+            option1: [
         { text: '剩余时间由少到多',value: 0},
         { text: '剩余时间由多到少',value: 1},
             { text: '起拍价格由低到高',value: 2},
@@ -155,8 +118,6 @@ export default {
 
         }
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
     methods:{
        
           onConfirm() {
@@ -167,10 +128,6 @@ export default {
              }
     
     },
-   
-=======
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
     created(){
        this.handlexianApi(20,1);
     },
@@ -184,10 +141,6 @@ export default {
       this.$refs.item.toggle();
     }
     }
-<<<<<<< HEAD
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 }
 </script>
 <style lang="scss">
@@ -196,15 +149,7 @@ export default {
      
 }
 .van-dropdown-menu{
-<<<<<<< HEAD
-<<<<<<< HEAD
-    margin-left: -30px
-=======
     margin-left: -50px
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
-    margin-left: -50px
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
 }
 .van-ellipsis{
        font-size: .28rem;
@@ -213,38 +158,23 @@ export default {
     border-width:0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .wrapper{
     height: 2549px;
 }
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         #hea{
         width: 100%;
         line-height: .88rem;
         padding: .16rem .2rem .16rem .16rem;
-<<<<<<< HEAD
-<<<<<<< HEAD
         background: #fff;
         display: flex;
         .back{
             width: .8rem;
             height: .8rem;
-=======
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         background-color: #fff;
         display: flex;
         .back{
             width: .6rem;
             height: .6rem;
-<<<<<<< HEAD
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         }
         .paimai{
             width: 4.08rem;
@@ -284,16 +214,10 @@ export default {
 }
 
 #list{
-<<<<<<< HEAD
-<<<<<<< HEAD
    
 
-=======
     padding: .2rem;
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
-=======
     padding: .2rem;
->>>>>>> 3ba5d35e57460cb77e672a73b2c222d638e60330
         .item{
             display: flex;
         justify-content: space-between;

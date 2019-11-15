@@ -8,7 +8,7 @@
       <!-- <span class="iconfont icon-sousuo"></span> -->
       <span class="iconfont icon-shenglvehao"></span>
     </div>
-    <van-tree-select height="55vw" :items="items" :main-active-index.sync="activeIndex">
+    <van-tree-select height="100%" :items="items" :main-active-index.sync="activeIndex">
       <template slot="content">
         <div v-if="activeIndex === 0|1|2|3">
           <h3 class="title">特色</h3>
