@@ -83,7 +83,7 @@ export default {
             this.$refs.scroll.handlefinishPullUp(); 
      },
    
-     }   
+     }     
 
 }
 </script>
@@ -92,9 +92,10 @@ export default {
     height: 1400px;
 }
 .min{
-    min-height: 1500px;
+    min-height: 30rem;
     background: #fff;
     padding-bottom:1rem;
+    padding-top:1rem;
 }
 
 #title-two{

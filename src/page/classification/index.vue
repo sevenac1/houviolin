@@ -10,7 +10,7 @@
     </div>
     <van-tree-select height="55vw" :items="items" :main-active-index.sync="activeIndex">
       <template slot="content">
-        <div v-if="activeIndex === 0">
+        <div v-if="activeIndex === 0|1|2|3">
           <h3 class="title">特色</h3>
           <div class="itemList">
             <a href class="item">
@@ -45,7 +45,7 @@
             </a>
           </div>
         </div>
-        <div v-if="activeIndex === 1">
+        <div v-if="activeIndex === 0|1|2|3">
           <h3 class="title">图书</h3>
           <div class="itemList">
             <a href class="item">
@@ -70,7 +70,7 @@
             </a>
           </div>
         </div>
-        <div v-if="activeIndex === 2">
+        <div v-if="activeIndex === 0|1|2|3">
           <h3 class="title">文创周边</h3>
           <div class="itemList">
             <a href class="item">
@@ -95,7 +95,7 @@
             </a>
           </div>
         </div>
-        <div v-if="activeIndex === 3">
+        <div v-if="activeIndex === 0|1|2|3">
           <h3 class="title">文创周边</h3>
           <div class="itemList">
             <a href class="item">
@@ -126,6 +126,7 @@
 </template>
 <script>
 import { TreeSelect } from "vant";
+import { allApi} from "@api/classification"
 export default {
   name: "ClassiFication",
   components: {
@@ -135,16 +136,25 @@ export default {
     return {
       activeIndex: 0,
       items: [
-        { text: "特色 1" },
-        { text: "图书 2" },
-        { text: "艺术收藏 3" },
-        { text: "文创周边 4" }
+        { text: "特色" },
+        { text: "图书" },
+        { text: "艺术收藏" },
+        { text: "文创周边" }
       ]
     };
+  },
+  created() {
+    var wap;
+    var msearch;
+    this.handleallApi(wap,msearch);
   },
   methods: {
     taggleBack() {
       this.$router.back();
+    },
+    async handleallApi(wap,msearch){
+      let data = await allApi(wap,msearch);
+      console.log(data);
     }
   }
 };
@@ -195,6 +205,7 @@ export default {
   height: 100%;
 }
 .van-sidebar.van-tree-select__nav {
+  height:20rem;
   height: 100%;
   width:1.9rem;
 }
@@ -255,5 +266,10 @@ export default {
   font-family: PingFangSC-Regular;
   color: #999;
   letter-spacing: 0;
+}
+
+.van-tree-select__content{
+  overflow:visible;
+  height:100%;
 }
 </style>
