@@ -9,9 +9,11 @@ server.interceptors.request.use((config)=>{
         config.params={...config.dadta};
     }
     return config;
+
     // config.headers["content-type"]="applicetion/json";  
     // config.headers["content-type"]="application/json";
     // config.headers["token"]=""
+
 },(err)=>{
     Promise.reject(err);
 })

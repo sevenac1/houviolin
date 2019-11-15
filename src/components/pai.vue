@@ -65,23 +65,23 @@ export default {
             // sessionStorage.setItem("gzmr",JSON.stringify(data.data.list))
         }
     },
-    // created(){
-    //      this.handleauctionApi(1); 
-    // },
-    //  mounted(){
-    //           this.$refs.scroll.handlepullingUp(()=>{
-    //               console.log(111);
-    //                 if(this.i<6){
-    //                      this.handleauctionApi(this.i++);
-    //                 }
-    //             })
-    //     },
-    //       watch:{
-    //         totalList(){
-    //         this.$refs.scroll.handlefinishPullUp(); 
-    //  },
+    created(){
+         this.handleauctionApi(1); 
+    },
+     mounted(){
+              this.$refs.scroll.handlepullingUp(()=>{
+                  console.log(111);
+                    if(this.i<6){
+                         this.handleauctionApi(this.i++);
+                    }
+                })
+        },
+          watch:{
+            totalList(){
+            this.$refs.scroll.handlefinishPullUp(); 
+     },
    
-    // }   
+    }   
 
 }
 </script>
@@ -90,8 +90,9 @@ export default {
     height: 1400px;
 }
 .min{
-    min-height: 1500px;
+    min-height: 30rem;
     background: #fff;
+    padding-top:1rem;
 }
 
 #title-two{
