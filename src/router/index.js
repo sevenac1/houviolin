@@ -5,6 +5,7 @@ import books from "./books"
 import auction from "./auction"
 import cart from "./cart"
 import mine from "./mine"
+import oldline from './olline'
 Vue.use(VueRouter)
 const router=new VueRouter({
     mode:"hash",
@@ -18,6 +19,7 @@ const router=new VueRouter({
         auction,
         cart,
         mine,
+        oldline,
         {
             path:"/login",
             component:_=>import("@page/login"),
@@ -91,11 +93,16 @@ const router=new VueRouter({
             }
         },
         {
-            path:"/xianzhuang",
-            component:_=>import("@page/xian"),
-            name:"xian"
+            path:"/detailList",
+            component:_=>import("@page/detailList"),
+            name:"detailList",
+            meta:{
+                flag:false,
+            }
         },
-        
+       
+   
+      
     ],
     
    

@@ -14,56 +14,40 @@
     </div>
     <div>
       <div id="nav">
-        <div class="dw"></div>
-        <van-dropdown-menu active-color="#ee0a24">
-          <van-dropdown-item v-model="value1" :options="option1" />
-          <van-dropdown-item v-model="value2" :options="option2" />
-        </van-dropdown-menu>
-        <div>
-          <span class="nav-title">筛选</span>
+        <div class="dw"  >
+                        <van-dropdown-menu active-color="#ee0a24">
+                            <van-dropdown-item v-model="value1" :options="option1"  />
+                        <!-- <van-dropdown-item v-model="value2" :options="option2" /> -->
+                        </van-dropdown-menu>     
+                        <div class="nac-til">
+                        <span class="nav-title">筛选</span>
+                        </div>
         </div>
-      </div>
+     
     </div>
-    <div id="list">
-      <ul class="list-item">
-        <li class="item" v-for="item in itemList" :key="item.itemId">
-          <div class="box-img">
-            <img :src="item.bigImg" alt />
-          </div>
-          <div class="box-right">
-            <p class="title">{{item.itemName}}</p>
-            <p class="datail">
-              <span class="cred">当前价</span>
-              <span class="fu">¥</span>
-              <span class="prices">{{item.beginPrice}}</span>
-              <span class="jia">{{item.bidNum}}次出价</span>
-            </p>
-            <p class="sy">
-              剩余
-              <span class="timer">{{item.lostTime}}</span>
-            </p>
-            <p class="bottom">
-              <span>起拍价</span>
-              <span>{{item.beginPrice}}</span>
-            </p>
-          </div>
-        </li>
-      </ul>
+      <Salesvolume :id="this.value1"  />
     </div>
   </div>
 </template>
 <script>
+import Salesvolume from "@components/list"
 import Vue from "vue";
 import { DropdownMenu, DropdownItem } from "vant";
 Vue.use(DropdownMenu).use(DropdownItem);
 import { xianApi } from "@api/xian";
 export default {
   name: "xian",
+  components:{
+    Salesvolume
+  },
   data() {
     return {
       itemList: [],
+      path:'',
       value1: 0,
       value2: "a",
+      send:0,
+      pathList:[{con:'/oldline/timemany'},{con:'/oldline/timelittle'},{con:'/oldline/beginprice'},{con:'/oldline/endprice'},],
       option1: [
         { text: "剩余时间由少到多", value: 0 },
         { text: "剩余时间由多到少", value: 1 },
@@ -87,26 +71,44 @@ export default {
     };
   },
   created() {
-    this.handlexianApi(20, 1);
+    this.handlexianApi(20, 1,0);
   },
   methods: {
-    async handlexianApi(pageShow, page) {
-      let data = await xianApi(pageShow, page);
-      console.log(data.data.itemList);
-      this.itemList = data.data.itemList;
-    },
+    // async handlexianApi(pageShow, page,order) {
+    //   let data = await xianApi(pageShow, page,order);
+    //   this.itemList = data.data.itemList;
+    // },
     onConfirm() {
       this.$refs.item.toggle();
     }
-  }
+  },
+
 };
 </script>
 <style lang="scss">
+.til{
+    float: left;
+}
+.dw{
+  height: 50px;
+ width: 100%;
+  float: left;
+  padding-left: 50px
+ 
+}
+.nac-til{
+    float: right;
+    margin-right: 30px;
+    height: 50px;
+    line-height: 50px
+}
 .van-dropdown-menu__item {
   width: 130px;
 }
+
 .van-dropdown-menu {
-  margin-left: -50px;
+  margin-left: -10px;
+  float: left;
 }
 .van-ellipsis {
   font-size: 0.28rem;
@@ -151,8 +153,7 @@ export default {
 }
 
 #nav {
-  display: flex;
-  justify-content: space-around;
+  height: 50px;
   .nav-title {
     line-height: 0.6rem;
     color: #202020;
@@ -162,6 +163,7 @@ export default {
 
 #list {
   padding: 0.2rem;
+  background: #fff;
   .item {
     display: flex;
     justify-content: space-between;

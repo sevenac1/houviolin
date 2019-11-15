@@ -78,10 +78,16 @@ export default {
 
 
 <style>
-.wrapper,
+
 .scroll_container {
+  
+  height: 1102px;
+  background: #fff
+ 
+}
+.wrapper{
   height: 100%;
-  overflow: hidden;
+   background: #fff
 }
 .scroll_loading {
   display: flex;

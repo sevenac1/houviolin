@@ -24,7 +24,8 @@
                                                 </p>
                                         </div>
                                
-                                </router-link>>
+                                </router-link>
+                                <router-view></router-view>
                         </ul>
               <div>{{value}}</div>
         </div>  
@@ -47,18 +48,18 @@ export default {
       created(){
         
         //      this.value=Number(this.value);
-        //      console.log(this.value);
+             console.log(this.value);
        this.handlexianApi(20,1,0);
     },
     methods:{
          async handlexianApi(pageShow,page,order){
             let data=await xianApi(pageShow,page,order);
-           console.log(data.data.itemList);
-           
-           this.itemList==data.data.itemList?data.data.itemList:'',
-           this.itemList=[...this.itemList,...data.data.itemList];
+           console.log(data.data.itemList);  
+           this.itemList==data.data.itemList?data.data.itemList:'';
+           this.itemList=data.data.itemList;
+            this.itemList=[...this.itemList,...data.data.itemList];
              
-        },
+        }
     },
         mounted(){
               this.$refs.scroll.handlepullingUp(()=>{
