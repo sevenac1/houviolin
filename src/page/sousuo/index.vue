@@ -82,10 +82,6 @@ export default {
         this.flag1=true;
       }
     }
-    ,
-    ind(){
-       
-    }
   },
   methods: {
    async handleSearch(query){
@@ -102,14 +98,14 @@ export default {
     this.value='';
   },
   handleBack(){
-    console.log(this.ind);
     if(this.ind==1){
-      console.log(111);
-      this.$router.push("/home");
+     this.$router.back();
     }
     if(this.ind==2){
-      console.log(222);
-      this.$router.push("/auction");
+     this.$router.back();
+    }
+    if(this.ind==3){
+      this.$router.back();
     }
   },
   },

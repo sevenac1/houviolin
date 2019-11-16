@@ -23,6 +23,11 @@ const router=new VueRouter({
         oldline,
         srearch,
         {
+            path:"/detaillist/:itemid",
+            component:_=>import("@page/detailList"),
+            name:"detaillist"
+        },
+        {
             path:"/login",
             component:_=>import("@page/login"),
             name:"login",
@@ -87,12 +92,7 @@ const router=new VueRouter({
                 flag:false,
             }
         },
-        {
-            path:"/detailList",
-            component:_=>import("@page/detailList"),
-            name:"detailList",
-          
-        },
+      
     {
         path:"/details",
         component:_=>import("@page/details"),
