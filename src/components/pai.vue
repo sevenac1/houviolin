@@ -60,11 +60,11 @@ export default {
      methods:{
         async handleauctionApi(catPage){
             let data=await auctionApi(catPage);
-            console.log(data);
-            console.log(data.data.list);
+            // console.log(data);
+            // console.log(data.data.list);
             this.totalList==data.data.list?data.data.list:'';
            this.totalList=[...this.totalList,...data.data.list];
-           console.log(this.totalList);
+        //    console.log(this.totalList);
              sessionStorage.setItem("gzmr",JSON.stringify(data.data.list))
         }
     },
