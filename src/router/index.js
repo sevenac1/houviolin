@@ -96,18 +96,14 @@ const router=new VueRouter({
             path:"/detailList",
             component:_=>import("@page/detailList"),
             name:"detailList",
+            
+        },
+        {
             path:"/details",
             component:_=>import("@page/details"),
             name:"details",
         },
-        {
-            path:"/xianzhuang",
-            component:_=>import("@page/xian"),
-            name:"xian",
-            meta:{
-                flag:false,
-            }
-        },
+        
        
    
       

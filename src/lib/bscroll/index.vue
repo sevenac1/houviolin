@@ -13,7 +13,7 @@
 <script>
 import BScroll from "better-scroll";
 export default {
-  name: "Alley-scroll",
+  name: "Violin-scroll",
   data(){
       return{
           loadingFlag:false
@@ -30,7 +30,9 @@ export default {
       //scroll事件的配置项
       probeType:1,
       click:true,
-      tap:true
+      tap:true,
+      scrollX:true,
+      scrollY:true,
     });
   },
   methods: {
