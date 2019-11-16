@@ -56,9 +56,8 @@ import {searchApi,serachApp} from "@api/search"
 export default {
   name:"sousuo",
   created() {
-      this.ind=this.$route.params.index;
-   console.log(this.ind);
-  this.handleserachApp();
+    this.ind=this.$route.params.index;
+    this.handleserachApp();
   },
   data(){
     return {
@@ -83,6 +82,10 @@ export default {
         this.flag1=true;
       }
     }
+    ,
+    ind(){
+       
+    }
   },
   methods: {
    async handleSearch(query){
@@ -97,14 +100,16 @@ export default {
   handleCanc(){
     this.flag=true;
     this.value='';
-
   },
   handleBack(){
+    console.log(this.ind);
     if(this.ind==1){
-      this.$router.push("/home")
+      console.log(111);
+      this.$router.push("/home");
     }
     if(this.ind==2){
-      this.$router.push("/auction")
+      console.log(222);
+      this.$router.push("/auction");
     }
   },
   },

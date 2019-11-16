@@ -3,7 +3,7 @@
         <div id="list">
         
                         <ul class="list-item">
-                                <router-link  class="item" v-for="item in itemList"  tag="li" to="/home">
+                                <router-link  class="item" v-for="item in itemList"  tag="li" to="/details">
                         
                                         <div class="box-img">
                                                 <img :src="item.bigImg" alt="">
