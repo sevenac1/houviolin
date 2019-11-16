@@ -5,9 +5,9 @@
         <span class="iconfont icon-fanhui"></span>
       </a>
       <div class="paimai">全部拍卖</div>
-      <div class="srearch">
-        <span class="iconfont icon-chaxun"></span>
-      </div>
+      <router-link class="srearch" tag="div" to="/sousuo"> 
+            <span class="iconfont icon-chaxun"></span>
+      </router-link>
       <div class="fenlei">
         <span class="iconfont icon-heng"></span>
       </div>
@@ -71,7 +71,7 @@ export default {
     };
   },
   created() {
-    this.handlexianApi(20, 1,0);
+    // this.handlexianApi(20,1,0);
   },
   methods: {
     // async handlexianApi(pageShow, page,order) {

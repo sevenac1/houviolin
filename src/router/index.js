@@ -6,6 +6,7 @@ import auction from "./auction"
 import cart from "./cart"
 import mine from "./mine"
 import oldline from './olline'
+import srearch from "./search"
 Vue.use(VueRouter)
 const router=new VueRouter({
     mode:"hash",
@@ -20,6 +21,7 @@ const router=new VueRouter({
         cart,
         mine,
         oldline,
+        srearch,
         {
             path:"/login",
             component:_=>import("@page/login"),
@@ -44,14 +46,7 @@ const router=new VueRouter({
                 flag:false,
             }
         },
-        {
-            path:"/sousuo",
-            component:_=>import("@page/sousuo"),
-            name:"sousuo",
-            meta:{
-                flag:false,
-            }
-        },
+      
         {
             path:"/artwork",
             component:_=>import("@page/artwork"),
@@ -96,21 +91,13 @@ const router=new VueRouter({
             path:"/detailList",
             component:_=>import("@page/detailList"),
             name:"detailList",
-            path:"/details",
-            component:_=>import("@page/details"),
-            name:"details",
+          
         },
-        {
-            path:"/xianzhuang",
-            component:_=>import("@page/xian"),
-            name:"xian",
-            meta:{
-                flag:false,
-            }
-        },
-       
-   
-      
+    {
+        path:"/details",
+        component:_=>import("@page/details"),
+        name:"details",
+    } 
     ],
     
    

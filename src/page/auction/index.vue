@@ -4,7 +4,7 @@
                         <div class="head-left">
                             <a href=""><img :src="head.headimg" alt=""></a>
                         </div>
-                        <router-link tag="a" to="/sousuo">
+                        <router-link tag="a" :to="{name:'sousuo',params:{index:2}}">
                             <div class="head-center-img" >
                             <img :src="head.headimg2" alt="">
                             <div>{{head.headtitle}}</div>
@@ -125,7 +125,10 @@
          
         </div>
         <div id="list-pai">
-               <Paimai />
+            <keep-alive>
+                  <Paimai />
+            </keep-alive>
+             
         </div>
        
         <!--  -->
@@ -277,7 +280,7 @@ export default {
 <style lang="scss" >
 #list-pai{
     position: relative;
-    height: 1000px;
+    height: 200px;
 }
 .books-{
         height: 1.96rem;
@@ -401,7 +404,7 @@ export default {
     display: flex;
     justify-content: space-between;
     .activity-left{
-        flex: 1;
+    width: 3.5rem;
         height: 2.5rem;
         border-bottom: 1px solid #f3f3f3;
         .title{

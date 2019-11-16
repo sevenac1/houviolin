@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div class="search">
-      <div class="search_content">
+    <div class="search" >
+      <div class="search_content" >
         <form action="javascript:void(0);" class="search_from">
           <input
             type="search"
@@ -10,11 +10,12 @@
             class="search_input"
             autofocus="autofocus"
             name
-            id
+            v-model="value"
           />
+          <v-touch class="cancle" tag="div" @tap="handleCanc()"></v-touch>
         </form>
       </div>
-      <div class="serach_btn">取消</div>
+      <v-touch class="serach_btn" tag="div" @tap="handleBack()"> 取消</v-touch>
     </div>
     <div class="search_tab_list">
       <div class="search_tab_item">
@@ -30,41 +31,85 @@
         <span>店铺</span>
       </div>
     </div>
-    <div class="search_main">
+    <div class="search_main" v-if="flag1">
       <div class="search_history_shadow">
-        <div class="search_history_bar">
-          <span>历史搜索</span>
-          <div>
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAVNJREFUSA3tVTFOw0AQvLMQD6AyEj9wwRvskvyBbyRVCp5BScMHSDrb+QKFfxAprngAhc2OdCvtHYe9iJNJEUvWrWd3dryTc84axdV13XXf90/W2sdxHG8lhbATYS95nm+LoviUuVh8FQNDDGKEralxmDLuBdZUg9zmW0EAqATdZIbWVVVVe9mjaZoVib6hRiOYSfJPsZvChGKoJ2yHlWsQT12W3nBHxQ9TRaly5MJeNWEqQerjb4K6rkfcqQRi/Zae0JyfIDYVbmmzFpMcjme/w9gO1mIsItfzs1S+XYr4MmEKF70eF0s9O1I8LG7p7D8NzjCazDtBtNisI7HjZJY0URDrt7il/ytIv80JDrVtezfhlCrFPbgnk8IJD0gMw/DMBC78zQouejjOQXKtfHCF74TdSPwP8UeWZfdlWR65hzchEiggG15DK5igWcFFj1AM3C8ixZj0FulhaQAAAABJRU5ErkJggg=="
-              alt
-            />
-          </div>
-        </div>
         <ul class="search_history_list">
-          <li>
-            <span>1111111111111</span>
-          </li>
-          <li>
-            <span>1111111111111</span>
+          <li  v-for="(item,index) in list" :key="item.id" >
+            <span>{{item.keyword}}</span>
           </li>
         </ul>
       </div>
-      <div class="search_history_shadow">
-        <div class="search_history_bar">
-          <span>热门搜索</span>
-        </div>
-        <ul class="search_history_list">
-          <li>
-            <span>1111111111111</span>
-          </li>
-        </ul>
-      </div>
+  
+    </div>
+    <div v-if="flag2" class="srerch-new" >
+      <ul>
+        <li v-for="(item) in list2" :key="item.id">
+          {{item}}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 <script>
-export default {};
+import {xianApi} from "@api/xian"
+import {searchApi,serachApp} from "@api/search"
+export default {
+  name:"sousuo",
+  created() {
+      this.ind=this.$route.params.index;
+   console.log(this.ind);
+  this.handleserachApp();
+  },
+  data(){
+    return {
+      ind:0,
+      flag1:true,
+      flag2:false,
+      list2:[],
+      list:[],
+      value:'',
+      history:{
+        titile:"历史搜索",
+        img:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAVNJREFUSA3tVTFOw0AQvLMQD6AyEj9wwRvskvyBbyRVCp5BScMHSDrb+QKFfxAprngAhc2OdCvtHYe9iJNJEUvWrWd3dryTc84axdV13XXf90/W2sdxHG8lhbATYS95nm+LoviUuVh8FQNDDGKEralxmDLuBdZUg9zmW0EAqATdZIbWVVVVe9mjaZoVib6hRiOYSfJPsZvChGKoJ2yHlWsQT12W3nBHxQ9TRaly5MJeNWEqQerjb4K6rkfcqQRi/Zae0JyfIDYVbmmzFpMcjme/w9gO1mIsItfzs1S+XYr4MmEKF70eF0s9O1I8LG7p7D8NzjCazDtBtNisI7HjZJY0URDrt7il/ytIv80JDrVtezfhlCrFPbgnk8IJD0gMw/DMBC78zQouejjOQXKtfHCF74TdSPwP8UeWZfdlWR65hzchEiggG15DK5igWcFFj1AM3C8ixZj0FulhaQAAAABJRU5ErkJggg=='
+      },
+    }
+  },
+  watch: {
+    value(newvalu){
+      this.flag1=false;
+      this.flag2=true;
+      this.handleSearch(newvalu);
+      if(!newvalu){
+        this.flag1=true;
+      }
+    }
+  },
+  methods: {
+   async handleSearch(query){
+      let data1=await searchApi(query);
+      this.list2=data1.data;
+    },
+     async handleserachApp(){
+    let data=await serachApp();
+    this.list=data.data.wordList;
+  },
+ 
+  handleCanc(){
+    this.flag=true;
+    this.value='';
+
+  },
+  handleBack(){
+    if(this.ind==1){
+      this.$router.push("/home")
+    }
+    if(this.ind==2){
+      this.$router.push("/auction")
+    }
+  },
+  },
+ 
+};
 </script>
 <style>
 #app {
@@ -93,9 +138,18 @@ export default {};
   margin-right: 0.3rem;
   border-radius: 0.08rem;
   background: #f7f7f7;
+  position: relative;
 }
 .search_from {
   width: 100%;
+}
+.cancle{
+  width: .68rem;
+  height: .68rem;
+  position: absolute;
+  top:0;
+  right: 0;
+  
 }
 .search_input {
   width: 100%;
@@ -200,5 +254,19 @@ export default {};
   text-overflow: ellipsis;
   height: 0.34rem;
   line-height: 0.34rem;
+}
+.srerch-new{
+  position: absolute;
+  top:0;
+  margin-top: 1.8rem;
+  left:0;
+  padding-left: 20px;
+  background: #fff;
+}
+.srerch-new li{
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  
 }
 </style>

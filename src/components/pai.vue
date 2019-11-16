@@ -94,6 +94,8 @@ export default {
     position: absolute;
     top:0rem;
     left: 0rem;
+    width: 100%;
+    height: 10px;
 }
 .min{
     background: #fff;

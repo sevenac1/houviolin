@@ -25,7 +25,12 @@ module.exports={
             "/list":{
                 target:"http://m.kongfz.cn/mobile",
                 changeOrigin:true
+            },
+            "/api-search":{
+                target:" https://m.kongfz.com",
+                changeOrigin:true
             }
+           
           
         
         }
