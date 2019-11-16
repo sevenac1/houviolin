@@ -8,131 +8,74 @@
       <!-- <span class="iconfont icon-sousuo"></span> -->
       <span class="iconfont icon-shenglvehao"></span>
     </div>
-    <!-- <van-tree-select height="100%" :items="items" :main-active-index.sync="activeIndex">
+    <van-tree-select height="100%" :items="items" :main-active-index.sync="activeIndex">
       <template slot="content">
-        <div v-if="activeIndex === 0|1|2|3">
-          <h3 class="title">特色</h3>
+        <div v-if="activeIndex === 0">
+          <h3 class="title">{{tslist.name}}</h3>
           <div class="itemList">
-            <a href class="item">
+            <a href class="item" v-for="(item,index) in tslist.list" :key="index">
               <div>
-                <img src="//res2.kongfz.com/mobile/images/cate/xianzhuang.png" class="lazy" alt />
+                <img :src="item.img" class="lazy" alt />
                 <div class="backgroundImg"></div>
               </div>
               <div class="des">
-                <div class="name">线装古籍</div>
-                <div class="num">285568</div>
+                <div class="name">{{item.name}}</div>
+                <div class="num">{{item.count}}</div>
               </div>
             </a>
-            <a href class="item">
-              <div>
-                <img src="//res2.kongfz.com/mobile/images/cate/xianzhuang.png" class="lazy" alt />
-                <div class="backgroundImg"></div>
-              </div>
-              <div class="des">
-                <div class="name">线装古籍</div>
-                <div class="num">285568</div>
-              </div>
-            </a>
-            <a href class="item">
-              <div>
-                <img src="//res2.kongfz.com/mobile/images/cate/xianzhuang.png" class="lazy" alt />
-                <div class="backgroundImg"></div>
-              </div>
-              <div class="des">
-                <div class="name">线装古籍</div>
-                <div class="num">285568</div>
-              </div>
-            </a>
+            
           </div>
         </div>
-        <div v-if="activeIndex === 0|1|2|3">
-          <h3 class="title">图书</h3>
+        <div v-if="activeIndex === 1">
+          <h3 class="title">{{booklist.name}}</h3>
           <div class="itemList">
-            <a href class="item">
+            <a href class="item" v-for="(item,index) in booklist.list" :key="index">
               <div>
-                <img src="//res2.kongfz.com/mobile/images/cate/xianzhuang.png" class="lazy" alt />
+                <img :src="item.img" class="lazy" alt />
                 <div class="backgroundImg"></div>
               </div>
               <div class="des">
-                <div class="name">线装古籍</div>
-                <div class="num">285568</div>
+                <div class="name">{{item.name}}</div>
+                <div class="num">{{item.count}}</div>
               </div>
             </a>
-            <a href class="item">
-              <div>
-                <img src="//res2.kongfz.com/mobile/images/cate/xianzhuang.png" class="lazy" alt />
-                <div class="backgroundImg"></div>
-              </div>
-              <div class="des">
-                <div class="name">线装古籍</div>
-                <div class="num">285568</div>
-              </div>
-            </a>
+           
           </div>
         </div>
-        <div v-if="activeIndex === 0|1|2|3">
-          <h3 class="title">文创周边</h3>
+        <div v-if="activeIndex === 2">
+          <h3 class="title">{{yssclist.name}}</h3>
           <div class="itemList">
-            <a href class="item">
+            <a href class="item" v-for="(item,index) in yssclist.list" :key="index">
               <div>
-                <img src="//res2.kongfz.com/mobile/images/cate/xianzhuang.png" class="lazy" alt />
+                <img :src="item.img" class="lazy" alt />
                 <div class="backgroundImg"></div>
               </div>
               <div class="des">
-                <div class="name">线装古籍</div>
-                <div class="num">285568</div>
+                <div class="name">{{item.name}}</div>
+                <div class="num">{{item.count}}</div>
               </div>
             </a>
-            <a href class="item">
-              <div>
-                <img src="//res2.kongfz.com/mobile/images/cate/xianzhuang.png" class="lazy" alt />
-                <div class="backgroundImg"></div>
-              </div>
-              <div class="des">
-                <div class="name">线装古籍</div>
-                <div class="num">285568</div>
-              </div>
-            </a>
+            
           </div>
         </div>
-        <div v-if="activeIndex === 0|1|2|3">
-          <h3 class="title">文创周边</h3>
+        <div v-if="activeIndex === 3">
+          <h3 class="title">{{wczblist.name}}</h3>
           <div class="itemList">
-            <a href class="item">
+            <a href class="item" v-for="(item,index) in wczblist.list" :key="index">
               <div>
-                <img src="//res2.kongfz.com/mobile/images/cate/xianzhuang.png" class="lazy" alt />
+                <img :src="item.img" class="lazy" alt />
                 <div class="backgroundImg"></div>
               </div>
               <div class="des">
-                <div class="name">线装古籍</div>
-                <div class="num">285568</div>
+                <div class="name">{{item.name}}</div>
+                <div class="num">{{item.count}}</div>
               </div>
             </a>
-            <a href class="item">
-              <div>
-                <img src="//res2.kongfz.com/mobile/images/cate/xianzhuang.png" class="lazy" alt />
-                <div class="backgroundImg"></div>
-              </div>
-              <div class="des">
-                <div class="name">线装古籍</div>
-                <div class="num">285568</div>
-              </div>
-            </a>
+            
           </div>
         </div>
       </template>
-    </van-tree-select> -->
-    <van-index-bar :index-list="indexList">
-      <van-index-anchor index="1">标题1</van-index-anchor>
-      <van-cell title="文本" />
-      <van-cell title="文本" />
-      <van-cell title="文本" />
-
-      <van-index-anchor index="2">标题2</van-index-anchor>
-      <van-cell title="文本" />
-      <van-cell title="文本" />
-      <van-cell title="文本" />...
-    </van-index-bar>
+    </van-tree-select>
   </div>
 </template>
 <script>
@@ -149,10 +92,17 @@ export default {
   data() {
     return {
       activeIndex: 0,
+      items: [
+        {text:"特色"},
+        {text:"图书"},
+        {text:"艺术收藏"},
+        {text:"文创周边"},
+      ],
       list: [],
-      indexList: [
-        
-      ]
+      tslist:[],
+      booklist:[],
+      yssclist:[],
+      wczblist:[],
     };
   },
   created() {
@@ -167,8 +117,11 @@ export default {
     async handleallApi(wap, msearch) {
       let data = await allApi(wap, msearch);
       var info = data.data;
-      this.list = info;
-      console.log(this.list);
+      this.tslist = info.section[0];
+      this.booklist = info.section[1];
+      this.yssclist = info.section[2];
+      this.wczblist = info.section[3];
+      console.log(this.tslist);
     }
   }
 };

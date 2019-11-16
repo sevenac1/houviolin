@@ -57,7 +57,7 @@ export default {
     };
   },
   created() {
-    this.activeIndex=JSON.parse(sessionStorage.getItem("tabIndex"));
+    this.activeIndex = JSON.parse(sessionStorage.getItem("tabIndex"))?JSON.parse(sessionStorage.getItem("tabIndex")):0;
   },
   methods:{
       handleToggle(index){
@@ -72,7 +72,7 @@ export default {
 .footer {
   display: flex;
   position: fixed;
-  width: 100%;
+  width: 7.5rem;
   height: 1rem;
   bottom: 0;
   left: 0;

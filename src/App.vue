@@ -12,7 +12,7 @@
 <script>
 import VueTouch from 'vue-touch'
 import tabBar from "@common/components/tabBar"
-
+import ViolinUI from "@lib";
 export default {
   name: 'App',
 

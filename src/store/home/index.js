@@ -21,7 +21,7 @@ let state = {
 let actions = {
     async handlehomeApi3({commit},currPage){
         let data = await homeApi(currPage);
-        commit("handleGetHome3",data.result.list); 
+        commit("handleGetHome"+currPage,data.result.list); 
     },
     async handlehomeApi4({commit},currPage){
         let data = await homeApi(currPage);
