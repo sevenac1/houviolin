@@ -3,8 +3,7 @@
         <div id="list">
         
                         <ul class="list-item">
-                                <router-link  class="item" v-for="item in itemList"  tag="li" to="/home">
-                        
+                                <router-link  class="item" v-for="item in itemList"  tag="li" :to="{name:'detaillist',params:{itemid:item.itemId}}">
                                         <div class="box-img">
                                                 <img :src="item.bigImg" alt="">
                                         </div>
@@ -62,7 +61,7 @@ export default {
           //  this.itemList=data.data.itemList;
             this.itemList=[...this.itemList,...data.data.itemList];
             console.log(this.itemList);
-              // sessionStorage.setItem("gzmr",JSON.stringify(data.data.list))
+               sessionStorage.setItem("zz",JSON.stringify(this.itemList))
         }
     },
         mounted(){

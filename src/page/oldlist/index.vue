@@ -5,7 +5,7 @@
         <span class="iconfont icon-fanhui"></span>
       </a>
       <div class="paimai">全部拍卖</div>
-      <router-link class="srearch" tag="div" to="/sousuo"> 
+      <router-link class="srearch" tag="div" :to="{name:'sousuo',params:{index:3}}"> 
             <span class="iconfont icon-chaxun"></span>
       </router-link>
       <div class="fenlei">

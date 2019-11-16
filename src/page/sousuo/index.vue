@@ -56,9 +56,8 @@ import {searchApi,serachApp} from "@api/search"
 export default {
   name:"sousuo",
   created() {
-      this.ind=this.$route.params.index;
-   console.log(this.ind);
-  this.handleserachApp();
+    this.ind=this.$route.params.index;
+    this.handleserachApp();
   },
   data(){
     return {
@@ -97,14 +96,16 @@ export default {
   handleCanc(){
     this.flag=true;
     this.value='';
-
   },
   handleBack(){
     if(this.ind==1){
-      this.$router.push("/home")
+     this.$router.back();
     }
     if(this.ind==2){
-      this.$router.push("/auction")
+     this.$router.back();
+    }
+    if(this.ind==3){
+      this.$router.back();
     }
   },
   },

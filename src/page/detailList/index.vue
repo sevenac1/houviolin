@@ -1,26 +1,28 @@
 <template>
-    <div>
+<div>
+
+
+    <div class="contt">
            <div id="header">
             <span class="iconfont icon-fanhui  fanhui"></span>
             <span class="iconfont icon-dianpu dianpu"></span>
             <span class="iconfont icon-heng heng"></span>
-        <img src="http://www.kfzimg.com/sw/kfzimg/301/3a3a870ef154c46e_b.jpg" alt="">
+        <img :src="a.bigImg" alt="">
     </div>
     <div id="container">
-        <p class="ms">临时通知 :孔网新书广场年度献礼，仅11.11——11.12两天，包含毛边、签名、港台图书在内的自营全场新书全场大促：</p>
         <div class="titles">
             <span class="zy">自营</span>
-            <span class="detail">《程沈说诗词》纪念套装（附赠帆布袋+特制藏书票一枚，无钤印）</span>
+            <span class="detail">{{a.itemName}}</span>
             <p>普通藏书票+帆布袋，《读宋诗随笔》+《宋词赏析》+《唐人七绝诗浅释》+《古今诗选》+特制礼盒，港澳台不参与本次活动。</p>
             <p class="q">
                <span class="nowprice">
                    <i class="fu">￥</i>
-                   <i class="nq">237.99</i>
+                   <i class="nq">{{a.maxPrice}}</i>
                </span>
                <span class="discount">8.9折</span>
                <span class="yprice">
                    <i>￥</i>
-                   <i >267.4</i>
+                   <i >{{a.beginPrice}}</i>
                </span>
                <span class="dizhi">北京朝阳</span>
 
@@ -71,7 +73,9 @@
             </p>
     </div>
     </div>
-    <div id="foot">
+
+      </div> 
+          <div id="foot">
         <div class="foot-total">
             <a href="" class="dp">
                 <span class="iconfont icon-dianpu zt"></span>
@@ -85,25 +89,65 @@
                     <span class="iconfont icon-shoucang zt"></span>
                     <i>收藏</i>
             </a>
-            <a href="" class="gwc" >加入购物车</a>
+            <v-touch  class="gwc" @tap="handleSumbit">加入购物车</v-touch>
             <a href="" class="buy">立即购买</a>
            
         </div>
-    </div>
-        
+    </div> 
     </div>
 </template>
 <script>
+import Vue from 'vue';
+import { Popup } from 'vant';
+Vue.use(Popup);
 export default {
-    
+    name:"Detaillist",
+    data(){
+        return {
+             itemlist:[],
+             itemid:0,
+             a:[],
+        }
+       
+    },
+    created(){
+        this.itemlist=JSON.parse(sessionStorage.getItem("zz"))
+    },
+    mounted(){
+            this.itemid=this.$route.params.itemid;
+            for(let i=0;i<this.itemlist.length;i++){
+                if(Number(this.itemlist[i].itemId)==this.itemid){
+                    console.log(111);
+                    this.a=this.itemlist[i];
+                    console.log(this.a)
+                }
+            }
+          
+    },
+    methods:{
+        handleSumbit(){
+            console.log(this.itemid);
+        }
+    },
 }
 </script>
-<style lang="#header{
+<style >
+.contt{
+ background: #c7c7c7;
+ position: absolute;
+ top:0;
+ left:0;
+ bottom: 0;
+ right: 0;
+ margin-bottom: 1.1rem
+}
+#header{
     width: 298px;
     height: 375px;
     text-align: center;
     margin: auto;
     position: relative;
+   
 }
 #header img{
     width:100%;
@@ -129,9 +173,7 @@ export default {
     height: .56rem;    
 
 }
-body{
-    background: #cccccc;
-}
+
 .container{
     height: 100%;
     width: 100%;
@@ -158,6 +200,7 @@ body{
     line-height: .48rem;
     width: 100%;
     background: #fff;
+    padding-bottom: 1.1rem;
 }
 .zy{
     display: inline-block;
@@ -368,6 +411,5 @@ body{
     padding:0 .2rem;
 
 }
-">
     
 </style>
