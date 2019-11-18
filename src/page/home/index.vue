@@ -638,7 +638,7 @@ export default {
     },
     personScroll() {
       let width = this.booksList.length * 1.3;
-      console.log(this.$refs.personTop);
+      // console.log(this.$refs.personTop);
       this.$refs.personTop.style.width = width + "rem";
       this.$nextTick(() => {
         if (!this.scroll) {

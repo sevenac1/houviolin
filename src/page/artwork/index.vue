@@ -6,7 +6,7 @@
             </v-touch>
             <span>艺术品专场</span>
             <router-link tag="span" to="/sousuo" class="iconfont icon-sousuo"></router-link>
-            <span class="iconfont icon-shenglvehao"></span>
+            <!-- <span class="iconfont icon-shenglvehao"></span> -->
         </div>
         <div class="nav">
             <div class="nav_box">
