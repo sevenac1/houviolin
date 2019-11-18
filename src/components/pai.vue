@@ -60,12 +60,9 @@ export default {
      methods:{
         async handleauctionApi(catPage){
             let data=await auctionApi(catPage);
-            // console.log(data);
-            // console.log(data.data.list);
             this.totalList==data.data.list?data.data.list:'';
            this.totalList=[...this.totalList,...data.data.list];
-        //    console.log(this.totalList);
-             sessionStorage.setItem("gzmr",JSON.stringify(data.data.list))
+             sessionStorage.setItem("gzmr",JSON.stringify(this.totalList))
         }
     },
     created(){
@@ -76,7 +73,6 @@ export default {
                  if(this.i<6){
                          this.handleauctionApi(this.i++);
                     }
-                  
                 })
         },
           watch:{

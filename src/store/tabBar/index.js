@@ -1,6 +1,6 @@
 
 let state = {
-    tabInedx:JSON.parse(sessionStorage.getItem("tabIndex"))?JSON.parse(sessionStorage.getItem("tabIndex")):0,
+    tabInedx:JSON.parse(sessionStorage.getItem("cartnumber"))?JSON.parse(sessionStorage.getItem("cartnumber")):0,
 }
 let actions = {
     handletabIndex({commit},index){
