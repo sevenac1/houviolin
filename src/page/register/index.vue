@@ -28,6 +28,7 @@
     </div>
 </template>
 <script>
+import {registerApi} from "@api/user"
 export default {
     data(){
         return{
@@ -64,31 +65,22 @@ export default {
             if(!this.userInfo.user || !this.userInfo.password){
                 alert("输入有误");
                 return;
-            }
-            if(window.localStorage.userArr){
-                console.log(window.localStorage.userArr);
-                var array=JSON.parse(window.localStorage.userArr)
             }else{
-                array=[];
+                this.userRegisterApi(this.userInfo.user,this.userInfo.password);
             }
-            for(var i = 0;i<array.length;i++){
-                console.log(array);
-                if(this.userInfo.user == array[i].username){
-                    alert('该用户已存在');
-                    this.thiscolor=false;
-                    this.userInfo.user="";
-                    this.userInfo.password="";
-                    return;
-                }
+            
+        },
+        async userRegisterApi(username,password){
+            console.log(username,password);
+            let data = await registerApi(username,password);
+            if(data.data.info== "用户名重复"){
+                alert(data.data.info+",请重新注册");
+                this.userInfo={};
+            }else{
+                this.$router.push("/login");
+                this.userInfo={};
             }
-            var obj = {username:this.userInfo.user,password:this.userInfo.password};
-            array.push(obj);
-            console.log(array);
-            window.localStorage.userArr=JSON.stringify(array);
-            localStorage.setItem('userArr',window.localStorage.userArr);
-            this.userInfo.user="";
-            this.userInfo.password="";
-            this.$router.push({path:"/login"})
+
         },
         clearun(){
                 this.userInfo.user == ""

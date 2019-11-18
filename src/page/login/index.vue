@@ -49,13 +49,14 @@
     </div>
 </template>
 <script>
+import {loginApi} from "@api/user"
 export default {
     name:"Login",
     data(){
         return{
             userInfo:'',
             thiscolor:false,
-            Info:localStorage.getItem("userArr"),
+            // Info:localStorage.getItem("userArr"),
             userIn:{
                 user:'',
                 pass:'',
@@ -74,34 +75,33 @@ export default {
                 this.thiscolor=false;
             }else{
                 this.thiscolor=true;
-                console.log(this.userIn.pass);
+                // console.log(this.userIn.pass);
                 
             }
         },
         login(){
             if(this.userIn.user && this.userIn.pass){
-                // console.log(this.Info)
-                var obj = JSON.parse(this.Info);
-                // console.log(obj);
-                var testList = obj.find((item)=>{
-                    return this.userIn.user === item.username;
-                })
-                if(!testList){
-                    alert("用户名不存在,请先注册");
-                    this.$router.push({path:"/register"})
-                }
-                var testpass = obj.find((item)=>{
-                    return this.userIn.pass === item.password && this.userIn.user === item.username;
-                })
-                if(!testpass){
-                    alert("密码不正确，请重新输入");
-                    return;
-                }
-                this.userInfo = JSON.stringify(testpass)
-                localStorage.setItem('userInfo',this.userInfo);
-                this.$router.push({path:"/home"});
+                this.userLoginApi(this.userIn.user,this.userIn.pass);
             }else{
                 alert("请输入信息")
+            }
+        },
+        async userLoginApi(username,password){
+            // console.log(username,password);
+            let data = await loginApi(username,password);
+            if(data.data.info == "用户名不存在"){
+                alert(data.data.info+"，请前去注册");
+                this.$router.push("register");
+                 this.userIn={};
+            }else if(data.data.info == "密码错误"){
+                alert(data.data.info+",请重新输入");
+                this.userIn={};
+            }
+            else{
+                alert(data.data.info);
+                console.log(this.$cookies.get("token"));
+                this.$router.push("/home");
+                this.userIn={};
             }
         }
     },

@@ -4,6 +4,15 @@ export default {
     name:"cart",
     meta:{
         flag:true,
-        requiredAuth:false,
+        requiredAuth:true,
+    },
+    beforeEnter: (to, from, next) => {
+        console.log(to,from);
+        if(to.path="/cart"){
+            next()
+        }else{
+            alert("请登录");
+            next("/cart");
+        }
     }
 }

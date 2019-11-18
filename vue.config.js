@@ -1,4 +1,5 @@
 const path=require("path");
+
 module.exports={
     devServer:{
         proxy:{
@@ -28,6 +29,10 @@ module.exports={
             },
             "/api-search":{
                 target:" https://m.kongfz.com",
+                changeOrigin:true
+            },
+            "/users":{
+                target:"http://localhost:2000",
                 changeOrigin:true
             }
            
