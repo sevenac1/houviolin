@@ -4,7 +4,7 @@
 
     <div class="contt">
            <div id="header">
-            <span class="iconfont icon-fanhui  fanhui"></span>
+            <v-touch class="iconfont icon-fanhui  fanhui" @tap="handleback"></v-touch>
             <span class="iconfont icon-dianpu dianpu"></span>
             <span class="iconfont icon-heng heng"></span>
         <img :src="a.bigImg" alt="">
@@ -85,10 +85,10 @@
                 <span class="iconfont icon-lianxi zt"></span>
                 <i>联系</i>
             </a>
-            <a href="" class="dp">
+            <v-touch  class="dp" @tap="handleMark" tag="span">
                     <span class="iconfont icon-shoucang zt"></span>
                     <i>收藏</i>
-            </a>
+            </v-touch>
             <v-touch  class="gwc" @tap="handleSumbit">加入购物车</v-touch>
             <a href="" class="buy">立即购买</a>
            
@@ -117,16 +117,28 @@ export default {
             this.itemid=this.$route.params.itemid;
             for(let i=0;i<this.itemlist.length;i++){
                 if(Number(this.itemlist[i].itemId)==this.itemid){
-                    console.log(111);
                     this.a=this.itemlist[i];
-                    console.log(this.a)
                 }
             }
           
     },
     methods:{
         handleSumbit(){
-            console.log(this.itemid);
+            var list=JSON.parse(sessionStorage.getItem("cartnumber") )||[];
+            list.push(this.itemid);
+            sessionStorage.setItem("cartnumber",JSON.stringify(list));
+            this.$store.dispatch("cart/handle");
+        },
+        handleback(){
+            this.$router.back();
+        },
+        handleMark(){
+            console.log(11);
+            var shopList=JSON.parse(sessionStorage.getItem("soucang"))||[];
+            shopList.push(this.itemid);
+            sessionStorage.setItem("soucang",JSON.stringify(shopList))
+            this.$store.dispatch("cart/hanalesc")
+            
         }
     },
 }

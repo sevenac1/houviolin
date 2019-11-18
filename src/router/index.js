@@ -104,15 +104,15 @@ const router=new VueRouter({
     
 })
 
-router.beforeEach((to,from,next)=>{
-    if(to.path !="/login" && to.meta.requiredAuth){
-        if(localStorage.getItem("token")){
-            next()
-        }else{
-            next({name:"login",params:{to:to.path}})
-        }
-    }else{
-        next();
-    }
-})
+// router.beforeEach((to,from,next)=>{
+//     if(to.path !="/login" && to.meta.requiredAuth){
+//         if(localStorage.getItem("token")){
+//             next()
+//         }else{
+//             next({name:"login",params:{to:to.path}})
+//         }
+//     }else{
+//         next();
+//     }
+// })
 export default router;
